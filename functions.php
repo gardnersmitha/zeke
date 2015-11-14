@@ -7,7 +7,8 @@ function now(){
 }
 
 function handleQuestionSubmit($question){
-	
+
+	$question = addslashes($question);
 	$sql = "INSERT INTO questions (question, date_created) VALUES ('".$question."', '".now()."')";
 
 	global $db;
@@ -30,7 +31,15 @@ function handleQuestionSubmit($question){
 function getAnswer($question_id){
 	//Run some code to try to find a response to the question
 	//If we don't have one, return something
-	echo "Got it. Let me dig in an get back to you on that one. Where can I reach you?";
+	$html = '
+		<p>"Got it. Let me dig in an get back to you on that one. Where can I reach you?"</p>
+		<form id="response-email-form" action="#" method="post" accept-charset="utf-8">
+			<input type="hidden" name="task" value="handleResponseEmailSubmit">
+			<input type="email" name="response-email" placeholder="Email Address">
+			<input type="submit" id="submit-response-email" value="Ask">
+		</form>
+	';
+	echo $html;
 }
 
 function processUser(){
