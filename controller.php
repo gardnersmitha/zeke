@@ -8,7 +8,11 @@ handleTask($task);
 function handleTask($task){
 	switch ($task) {
 		case 'handleQuestionSubmit':
-			handleQuestionSubmit();
+			createNewQuestion();
+			break;
+
+		case 'updateUser':
+			updateUser();
 			break;
 		
 		default:
