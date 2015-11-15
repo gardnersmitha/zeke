@@ -8,8 +8,7 @@ handleTask($task);
 function handleTask($task){
 	switch ($task) {
 		case 'handleQuestionSubmit':
-			$question = $_POST['question'];
-			handleQuestionSubmit($question);
+			handleQuestionSubmit();
 			break;
 		
 		default:

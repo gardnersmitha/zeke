@@ -1,24 +1,92 @@
 <?php
 require_once('config.php');
 
-
+//get some time for a brother's timestamps
 function now(){
 	return date('Y-m-d H:i:s');
 }
 
-function handleQuestionSubmit($question){
+//handle users
+function getUser(){
 
-	$question = addslashes($question);
-	$sql = "INSERT INTO questions (question, date_created) VALUES ('".$question."', '".now()."')";
+	//Check for a cookie,
+	if(!isset($_COOKIE['zekeUser'])) {
+		
+		//if no, create a new user record and drop a cookie
+		$user = createNewUser();
+		return $user;
 
+	}else{
+		//If we have a cookie, say what's up
+		$user = $_COOKIE['zekeUser'];
+		return $user;
+	}
+
+	//if it exists, look up the user and update the question record with the proper user id
+	//if not, create a new user record and drop a cookie
+}
+
+//create a new user
+function createNewUser(){
+
+	//vars
 	global $db;
+
+	//query
+	$createQuery = "INSERT INTO users (date_created) VALUES ('".now()."')";
+
+	//create
+	$newUser = $db->query($createQuery);
+
+	if ($newUser === TRUE) {
+
+		//get the new user id
+		$newUser_id = $db->insert_id;
+
+		//use that to get the new user as an array
+		$selectNewUserQuery = "SELECT * FROM users WHERE id = ".$newUser_id;
+		$newUser = $db->query($selectNewUserQuery);
+		$user = $newUser->fetch_assoc();
+    	error_log($user);
+
+    	//use it to set a cookie
+		setcookie(
+			'zekeUser[id]',
+			$user['id'],
+			time()+86400*180,
+			'/');
+
+		//send it back
+		return $user;
+
+	} else {
+    	echo "Error: " . $createQuery . "<br>" . $db->error;
+	}
+
+}
+
+
+
+//handle the incoming question from the homepage
+function handleQuestionSubmit(){
+
+	//vars
+	global $db;
+	$question = addslashes($_POST['question']);
+	$user = $_POST['user_id'];
+
+
+
+	//query
+	$sql = "INSERT INTO questions (question, user_id, date_created) VALUES ('".$question."','".$user."', '".now()."')";
 	
+
+	//insert
 	if ($db->query($sql) === TRUE) {
 
 		$question_id = $db->insert_id;
-    	//error_log("New question record created successfully. Question ID:".$question_id);
+    	error_log("New question record created successfully. Question ID:".$question_id);
 
-    	processUser();
     	getAnswer($question_id);
 
 	} else {
@@ -42,10 +110,5 @@ function getAnswer($question_id){
 	echo $html;
 }
 
-function processUser(){
-	//Check for a cookie, 
-	//if it exists, look up the user and update the question record with the proper user id
-	//if not, create a new user record and drop a cookie
-}
 
 ?>
