@@ -1,4 +1,56 @@
 body{
-	padding:100px;
-	xbackground:blue;
+	color:#FFF;
+	background:#91BAFF;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.display-type{
+	font-family: 'Merriweather', serif;
+	font-weight:400;
+}
+
+.jumbotron{
+	color:#FFF;
+	background: #91BAFF;
+}
+
+	#homepage-jumbo{
+
+	}
+
+		#homepage-jumbo form{
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+
+.round-input{
+	display: flex;
+}
+	.round-input input{
+		height:40px;
+		border:none;
+	}
+
+	.round-input input[type="text"]{
+		padding-left: 15px;
+		border-top-left-radius: 40px;
+		border-bottom-left-radius: 40px;
+		width: 80%;
+	}
+
+	.round-input input[type="submit"]{
+		color: #91BAFF;
+		background:#F4F4F4;
+		border-top-right-radius: 40px;
+		border-bottom-right-radius: 40px;
+		width: 20%;
+	}
+
+footer{
+	color:#91BAFF;
+	height:100px;
+	background:#333;
+	width: 100%;
+	position: absolute;
+	bottom:0;
 }

@@ -20,9 +20,9 @@
 12. Show the UI a confirmation that the email was received
 13. Provide the user with an estimated response time. (based on the number of unanswered questions?)
 ---
-1. Admin answers question
+1. Admin answers question & categorizes question
 2. Admin submits form
-3. 
+3. Admin
 
 
 #Admin page

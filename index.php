@@ -15,32 +15,42 @@ $user = getUser();
 	<title>Zeke</title>
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Merriweather:400,300,300italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
-<body>
-	<header id="main-header" class="nav">
-		<nav>
-			<ul>
-				<li><a href="/about" title="About">About</a></li>
-				<li><a href="/contact" title="Contact">Contact</a></li>
+<body class="container-fluid">
+	<header id="main-header" class="nav row">
+		<nav class="navbar col-xs-12">
+			<ul class="nav navbar-nav">
+				<li class="nav-item"><a href="/about" title="About">About</a></li>
+				<li class="nav-item"><a href="/contact" title="Contact">Contact</a></li>
 			</ul>
 		</nav>
 		
 	</header><!-- /header -->
 
-	<main id="main-content">
+	<main id="main-content" class="row">
+		<div id="homepage-jumbo"class="jumbotron">
+			<h1 class="text-center display-type">Meet Zeke</h1>
+			<p class="text-center">Personalized answers to you home ownership questions. Go ahead, ask him a question.</p>
 
-		<h2>Meet Zeke</h2>
-		<p>Personalized answers to you home ownership questions. Go ahead, ask him a question.</p>
+			<form id="question-form" class="col-xs-12 col-lg-6 col-lg-offset-3" action="#" method="post" accept-charset="utf-8">
+				<input type="hidden" name="task" value="handleQuestionSubmit">
+				<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
 
-		<form id="question-form" action="#" method="post" accept-charset="utf-8">
-			<input type="hidden" name="task" value="handleQuestionSubmit">
-			<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
-			<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
-			<input type="submit" id="submit-question" value="Ask">
-		</form>
+				<div id="homepage-question" class="round-input">
+					<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
+					<input type="submit" id="submit-question" value="Ask">
+				</div>
+			</form>
+		</div>
 	</main><!-- /main -->	
+
+	<footer class="row">
+		<small>&copy <?php echo(date('Y')); ?></small>
+	</footer>
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
