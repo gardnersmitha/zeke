@@ -22,8 +22,6 @@ function getUser(){
 		return $user;
 	}
 
-	//if it exists, look up the user and update the question record with the proper user id
-	//if not, create a new user record and drop a cookie
 }
 
 //create a new user
@@ -48,7 +46,7 @@ function createNewUser(){
 		$selectNewUserQuery = "SELECT * FROM users WHERE id = ".$newUser_id;
 		$newUser = $db->query($selectNewUserQuery);
 		$user = $newUser->fetch_assoc();
-    	error_log($user);
+    	//error_log($user);
 
     	//use it to set a cookie
 		setcookie(
@@ -104,18 +102,29 @@ function createNewQuestion(){
 	$db->close();
 }
 
+//find an answer to the question
 function getAnswer($question){
 	//Run some code to try to find a response to the question
+
+	//If answer = true && user = true
+
+
 	//If we don't have one, return something
 	$html = '
-		<p>"Got it. Let me dig in an get back to you on that one. Where can I reach you?"</p>
-		<form id="response-email-form" action="#" method="post" accept-charset="utf-8">
-			<input type="hidden" name="task" value="updateUser">
-			<input type="hidden" name="question_id" value="'.$question['id'].'">
-			<input type="hidden" name="user_id" value="'.$question['user_id'].'">
-			<input type="email" name="response_email" placeholder="Email Address">
-			<input type="submit" id="submit-response-email" value="Submit">
-		</form>
+		<div id="homepage-jumbo"class="jumbotron">
+			<h1 class="text-center display-type">Meet Zeke</h1>
+			<p class="text-center">Got it. Let me dig in an get back to you on that one. Where can I reach you?</p>
+			<form id="response-email-form" class="col-xs-12 col-lg-6 col-lg-offset-3" action="#" method="post" accept-charset="utf-8">
+					<input type="hidden" name="task" value="updateUser">
+					<input type="hidden" name="question_id" value="'.$question['id'].'">
+					<input type="hidden" name="user_id" value="'.$question['user_id'].'">
+
+				<div id="email-response" class="round-input">
+					<input type="email" name="response_email" placeholder="Email Address">
+					<input type="submit" id="submit-response-email" value="Submit">
+				</div>
+			</form>
+		</div>
 	';
 	echo $html;
 }
@@ -143,6 +152,13 @@ function updateUser(){
 		// $newQuestion = $db->query($selectNewQuestionQuery);
 		// $question = $newQuestion->fetch_assoc();
   		error_log($question);
+
+  		//use it to set a cookie
+		setcookie(
+			'zekeUser[email]',
+			$email,
+			time()+86400*180,
+			'/');
 
     	echo "Thanks! I'll send you an email as soon as I have an answer.";
 

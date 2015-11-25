@@ -23,9 +23,9 @@ $user = getUser();
 <body class="container-fluid">
 	<header id="main-header" class="nav row">
 		<nav class="navbar col-xs-12">
-			<ul class="nav navbar-nav">
-				<li class="nav-item"><a href="/about" title="About">About</a></li>
-				<li class="nav-item"><a href="/contact" title="Contact">Contact</a></li>
+			<ul class="nav navbar-nav pull-right">
+				<li class="nav-item"><a href="about" title="About">About</a></li>
+				<li class="nav-item"><a href="contact" title="Contact">Contact</a></li>
 			</ul>
 		</nav>
 		
