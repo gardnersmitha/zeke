@@ -49,7 +49,7 @@ $user = getUser();
 	</main><!-- /main -->	
 
 	<footer class="row">
-		<small>&copy <?php echo(date('Y')); ?></small>
+		<small>&copy Zeke <?php echo(date('Y')); ?></small>
 	</footer>
 
 	<!-- Scripts -->

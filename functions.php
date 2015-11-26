@@ -170,5 +170,37 @@ function updateUser(){
 
 }
 
+function getAdminQuestions(){
+	global $db;
+	//echo('tits');
+
+	$getAdminQuestionsQuery = "SELECT * FROM questions ORDER BY date_created DESC";
+
+	//execute
+	$result = $db->query($getAdminQuestionsQuery);
+
+	print_r($row);
+
+    // if($result == FALSE){
+    // 	echo "Error: " . $sql . "<br>" . $db->error;
+    // 	//error_log("Admin questions successfully fetched.");
+    // }
+
+    $html = '';
+
+    while ($row = $result->fetch_assoc()){
+    	//$rows[] = $row;
+    	$html .= '
+			<div class="card card-block">
+			  <h4 class="card-title">'.$row["question"].'</h4>
+			  <p class="card-text">Submitted by User #'.$row["user_id"].'</p>
+			</div>
+    	 ';
+    }
+
+	echo $html;  
+
+}
+
 
 ?>

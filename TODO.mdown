@@ -22,7 +22,7 @@
 ---
 1. Admin answers question & categorizes question
 2. Admin submits form
-3. Admin
+3. Admin 
 
 
 #Admin page
@@ -35,4 +35,3 @@
 	- send button to send response to email
 
 
-# User model
