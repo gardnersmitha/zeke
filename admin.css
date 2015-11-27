@@ -1,8 +1,20 @@
+html, body{
+	height:100%;
+}
+
 body{
 	color:#333;
 	font-family: 'Noto Sans', sans-serif;
 }
 
+#page-wrap{
+	min-height: 100%;
+}
+
+main{
+	overflow: auto;
+	padding-bottom: 20px;
+}
 input{
 	color:#333;
 }
@@ -24,7 +36,16 @@ a:hover{
 .navbar{
 	background: #91BAFF;
 	border-radius: 0px;
+	color:#FFF;
 }
+
+	.navbar a{
+		color:#FFF;
+	}
+
+	.navbar a:hover{
+		color:#FFF;
+	}
 
 .round-input{
 	display: flex;
@@ -59,7 +80,6 @@ footer{
 	color:#91BAFF;
 	height:100px;
 	background:#333;
-	width: 100%;
-	position: absolute;
-	bottom:0;
+	position: relative;
+	clear:both;
 }

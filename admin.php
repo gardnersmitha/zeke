@@ -21,60 +21,64 @@ $user = getUser();
 
 
 </head>
-<body class="container-fluid">
-	<header id="main-header" class="nav row">
-		<nav class="navbar col-xs-12">
-			<span>Zeke Admin</span>
+<body>
+	<div id="page-wrap" class="container-fluid">
+		<header id="main-header" class="nav row">
+			<nav class="navbar col-xs-12">
+				<span>Zeke Admin</span>
 
-			<ul class="nav navbar-nav pull-right">
-				<li class="nav-item"><a href="about" title="About">About</a></li>
-				<li class="nav-item"><a href="contact" title="Contact">Contact</a></li>
-			</ul>
-		</nav>
-		
-	</header><!-- /header -->
+				<ul class="nav navbar-nav pull-right">
+					<li class="nav-item"><a href="about" title="About">About</a></li>
+					<li class="nav-item"><a href="contact" title="Contact">Contact</a></li>
+				</ul>
+			</nav>
+			
+		</header><!-- /header -->
 
-	<main id="main-content" class="row">
-		<div class="admin-wrap col-xs-12">
-			<h3 class="p-y">Welcome, Zeker</h3>
+		<main id="main-content" class="row">
+			<div class="admin-wrap col-xs-12">
+				<h3 class="p-y">Welcome, Zeker</h3>
 
-			<!-- Tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-			  <li class="nav-item">
-			    <a class="nav-link active" href="#questions" role="tab" data-toggle="tab">Questions</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Profile</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
-			  </li>
-			</ul>
+				<!-- Tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+				  <li class="nav-item">
+				    <a class="nav-link active" href="#questions" role="tab" data-toggle="tab">Questions</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Profile</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
+				  </li>
+				</ul>
 
-			<!-- Tab panes -->
-			<div class="tab-content">
-			  <div role="tabpanel" class="tab-pane active" id="questions">
-			  	<div id="admin-question-search" class="round-input p-y-md">
-					<input type="text" name="admin-question-search" placeholder="Search">
-					<input type="submit" id="submit-admin-question-search" value="Search">
+				<!-- Tab panes -->
+				<div class="tab-content">
+				  <div role="tabpanel" class="tab-pane active" id="questions">
+				  	<div id="admin-question-search" class="round-input p-y-md">
+						<input type="text" name="admin-question-search" placeholder="Search">
+						<input type="submit" id="submit-admin-question-search" value="Search">
+					</div>
+					<div class="admin-questions">
+						<?php getAdminQuestions(); ?>
+					</div>
+				  </div>
+				  <div role="tabpanel" class="tab-pane" id="profile">...</div>
+				  <div role="tabpanel" class="tab-pane" id="messages">...</div>
+				  <div role="tabpanel" class="tab-pane" id="settings">...</div>
 				</div>
-				<div class="admin-questions">
-					<?php getAdminQuestions(); ?>
-				</div>
-			  </div>
-			  <div role="tabpanel" class="tab-pane" id="profile">...</div>
-			  <div role="tabpanel" class="tab-pane" id="messages">...</div>
-			  <div role="tabpanel" class="tab-pane" id="settings">...</div>
+
 			</div>
-
-		</div>
-	</main><!-- /main -->	
+		</main><!-- /main -->	
+	</div> <!-- /page-wrap -->
 
 	<footer class="row">
-		<small>&copy Zeke <?php echo(date('Y')); ?></small>
+		<div class="col-xs-12">
+			<small>&copy Zeke <?php echo(date('Y')); ?></small>
+		</div>
 	</footer>
 
 	<!-- Scripts -->

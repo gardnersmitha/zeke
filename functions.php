@@ -191,9 +191,17 @@ function getAdminQuestions(){
     while ($row = $result->fetch_assoc()){
     	//$rows[] = $row;
     	$html .= '
-			<div class="card card-block">
-			  <h4 class="card-title">'.$row["question"].'</h4>
-			  <p class="card-text">Submitted by User #'.$row["user_id"].'</p>
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">'.$row["question"].'</h4>
+					<p class="card-text"><small class="text-muted">Submitted by User #'.$row["user_id"].'</small></p>
+					<form>
+						<textarea class="form-control" rows="3" name=""></textarea>
+					</form>
+				</div>
+				<div class="card-block">
+					<button class="btn btn-primary">Answer</button>
+				</div>
 			</div>
     	 ';
     }
