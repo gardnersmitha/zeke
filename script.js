@@ -1,16 +1,17 @@
-$(document).ready(function(){
+$(document).ready(function () {
 	//alert('Jquery is loaded');
 
 	//init our jQuery functions
 	submitQuestion();
 	submitResponseEmail();
+	submitAnswer();
 });
 
 //handles submitting the initial question form
 function submitQuestion() {
 
-	var	submitButton = $('#submit-question');
-	var mainContent = $('#main-content');
+	var    submitButton = $('#submit-question'),
+	       mainContent = $('#main-content');
 
 	submitButton.click(function(e) {
 
@@ -88,4 +89,39 @@ function submitResponseEmail() {
 function showResponseEmailConfirm(response){
 	var mainContent = $('#main-content');
 	mainContent.html(response);
+}
+
+// ADMIN FUNCTIONS
+//handle inputting answers
+
+function submitAnswer(){
+	var answerForm = $('.answer-form');
+
+	answerForm.submit(function(e){
+		e.preventDefault();
+		var answer = $(this).serialize();
+
+		console.log(answer);
+
+
+		var answerConfirm = $.post('controller.php',answer)
+
+			.done(function(response) {
+                
+				showAnswerConfirm(response);
+			})
+
+			.fail(function(response) {
+				alert(response);
+			})
+
+			.always(function() {
+				console.log('submitAnswer executed.');
+			});
+
+	});
+}
+
+function showAnswerConfirm(response){
+	alert(response);
 }

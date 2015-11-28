@@ -21,32 +21,35 @@ $user = getUser();
 
 </head>
 <body class="container-fluid">
-	<header id="main-header" class="nav row">
-		<nav class="navbar col-xs-12">
-			<ul class="nav navbar-nav pull-right">
-				<li class="nav-item"><a href="about" title="About">About</a></li>
-				<li class="nav-item"><a href="contact" title="Contact">Contact</a></li>
-			</ul>
-		</nav>
-		
-	</header><!-- /header -->
+	<div id="page-wrap" class="container-fluid">
+		<header id="main-header" class="nav row">
+			<nav class="navbar col-xs-12">
+				<ul class="nav navbar-nav pull-right">
+					<li class="nav-item"><a href="about" title="About">About</a></li>
+					<li class="nav-item"><a href="contact" title="Contact">Contact</a></li>
+				</ul>
+			</nav>
+			
+		</header><!-- /header -->
 
-	<main id="main-content" class="row">
-		<div id="homepage-jumbo"class="jumbotron">
-			<h1 class="text-center display-type">Meet Zeke</h1>
-			<p class="text-center">Personalized answers to you home ownership questions. Go ahead, ask him a question.</p>
+		<main id="main-content" class="row">
+			<div id="homepage-jumbo"class="jumbotron">
+				<img id="logo" class="m-y-lg center-block"src="img/logo.svg" alt="logo">
+				<h1 class="text-center display-type">Meet Zeke</h1>
+				<p class="text-center">Personalized answers to your home ownership questions. <br/>Go ahead, ask him a question.</p>
 
-			<form id="question-form" class="col-xs-12 col-lg-6 col-lg-offset-3" action="#" method="post" accept-charset="utf-8">
-				<input type="hidden" name="task" value="handleQuestionSubmit">
-				<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
+				<form id="question-form" class="col-xs-12 col-lg-6 col-lg-offset-3 m-y-md" action="#" method="post" accept-charset="utf-8">
+					<input type="hidden" name="task" value="handleQuestionSubmit">
+					<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
 
-				<div id="homepage-question" class="round-input">
-					<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
-					<input type="submit" id="submit-question" value="Ask">
-				</div>
-			</form>
-		</div>
-	</main><!-- /main -->	
+					<div id="homepage-question" class="round-input">
+						<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
+						<input type="submit" id="submit-question" value="Ask">
+					</div>
+				</form>
+			</div>
+		</main><!-- /main -->	
+	</div><!-- /page-wrap -->
 
 	<footer class="row">
 		<small>&copy Zeke <?php echo(date('Y')); ?></small>

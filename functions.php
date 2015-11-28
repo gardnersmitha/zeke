@@ -145,7 +145,7 @@ function updateUser(){
 	//execute
 	if ($db->query($updateUserQuery) === TRUE) {
 
-    	error_log("Question record updated successfully.");
+    	error_log("User record updated successfully.");
 
     	//use that to get the new question back as an array
 		// $selectNewQuestionQuery = "SELECT * FROM questions WHERE id = ".$newQuestion_id;
@@ -172,42 +172,113 @@ function updateUser(){
 
 function getAdminQuestions(){
 	global $db;
-	//echo('tits');
 
 	$getAdminQuestionsQuery = "SELECT * FROM questions ORDER BY date_created DESC";
 
 	//execute
 	$result = $db->query($getAdminQuestionsQuery);
 
-	print_r($row);
+	//get list of categories to populate dropdown
+    $categories = getCategories();
+    $categoriesHtml = '';
 
-    // if($result == FALSE){
-    // 	echo "Error: " . $sql . "<br>" . $db->error;
-    // 	//error_log("Admin questions successfully fetched.");
-    // }
+    foreach ($categories as $display_name=>$value) {
+    	$categoriesHtml .= '<option value="'.$value.'">'.$display_name.'</option>';
+    }
 
+
+    //build html for each question
     $html = '';
-
     while ($row = $result->fetch_assoc()){
     	//$rows[] = $row;
     	$html .= '
-			<div class="card">
+			<div class="card admin-question-card" id="admin-question-card-'.$row["id"].'">
 				<div class="card-block">
 					<h4 class="card-title">'.$row["question"].'</h4>
 					<p class="card-text"><small class="text-muted">Submitted by User #'.$row["user_id"].'</small></p>
-					<form>
-						<textarea class="form-control" rows="3" name=""></textarea>
+					<form class="answer-form" id="answer-form-'.$row["id"].'">
+						<input type="hidden" name="task" value="handleAnswerSubmit"/>
+						<input type="hidden" name="question_id" value="'.$row["id"].'"/>
+						<input type="hidden" name="user_id" value="'.$row["user_id"].'"/>
+						<select class="form-control m-y" name="category" value="Select Category">
+							'.$categoriesHtml.'
+						</select>
+						<textarea class="form-control" rows="3" name="answer" placeholder="Got an answer?"></textarea>
+						<input class="m-y" type="checkbox" name="send_email"/> Email this answer to the user
+						<input type="submit" value="Answer" id="submit-answer-'.$row["id"].'" class="submit-answer btn btn-primary btn-block">
 					</form>
-				</div>
-				<div class="card-block">
-					<button class="btn btn-primary">Answer</button>
 				</div>
 			</div>
     	 ';
     }
 
+    //return html to frontend
 	echo $html;  
 
+}
+
+function handleAnswerSubmit(){
+	//vars
+	$question_id = $_POST['question_id'];
+	$user_id = $_POST['user_id'];
+	$answer = addslashes($_POST['answer']);
+	$category = addslashes($_POST['category']);
+
+	//check and set our send_email flag
+	if(isset($_POST['send_email'])){$send_email = TRUE; }else{ $send_email = FALSE;}
+
+	updateQuestion($question_id,$category);
+	createAnswer($question_id,$answer);
+
+}
+
+function updateQuestion($question_id,$category){
+	global $db;
+
+	$updateQuestionQuery = "UPDATE questions SET category = '".$category."' WHERE id = '".$question_id."'";
+
+	if ($db->query($updateQuestionQuery) === TRUE) {
+
+    	error_log("Question record updated successfully.");
+    	//return TRUE;
+
+	} else {
+    	echo "Error: " . $updateQuestionQuery . "<br>" . $db->error;
+	}
+}
+
+function createAnswer($question_id,$answer){
+	
+	global $db;
+	$user = getUser();
+
+	//$newAnswerQuery = "INSERT INTO answers VALUES"
+	$newAnswerQuery = "INSERT INTO answers (question_id, user_id, answer, date_created) VALUES ('".$question_id."','".$user['id']."','".$answer."', '".now()."')";
+
+	if ($db->query($newAnswerQuery) === TRUE) {
+
+    	error_log("Answer record created successfully.");
+    	echo'tits';
+
+	} else {
+    	echo "Error: " . $newAnswerQuery . "<br>" . $db->error;
+	}
+}
+
+function emailAnswer(){
+
+}
+
+function getCategories(){
+	//get the list of posisble categories...
+	$categories = [
+		'Plumbing' 	=> 'plumbing',
+		'HVAC'		=> 'hvac',
+		'Finance'	=> 'finance',
+		'Roofing'	=> 'roofing'
+	];
+
+	return $categories;
 }
 
 

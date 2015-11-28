@@ -1,7 +1,15 @@
+html, body{
+	height:100%;
+}
+
 body{
 	color:#FFF;
 	background:#91BAFF;
 	font-family: 'Noto Sans', sans-serif;
+}
+
+#page-wrap{
+	min-height: 100%;
 }
 
 input{
@@ -28,12 +36,11 @@ a:hover{
 }
 
 	#homepage-jumbo{
-
+		padding-top: 1rem;
 	}
 
-		#homepage-jumbo form{
-			margin-top: 60px;
-			margin-bottom: 60px;
+		#homepage-jumbo #logo{
+			height:10rem;
 		}
 
 
@@ -69,7 +76,6 @@ footer{
 	color:#91BAFF;
 	height:100px;
 	background:#333;
-	width: 100%;
-	position: absolute;
-	bottom:0;
+	position: relative;
+	clear:both;
 }

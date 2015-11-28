@@ -10,6 +10,10 @@ function handleTask($task){
 		case 'handleQuestionSubmit':
 			createNewQuestion();
 			break;
+		
+		case 'handleAnswerSubmit':
+			handleAnswerSubmit();
+			break;
 
 		case 'updateUser':
 			updateUser();
