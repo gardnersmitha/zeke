@@ -135,7 +135,7 @@ function updateUser(){
 	global $db;
 	$question_id = addslashes($_POST['question_id']);
 	$user_id = $_POST['user_id'];
-	$email = md5($_POST['response_email']);
+	$email = $_POST['response_email']; //This is wrong. Need to change to use AES_ENCRYPT(value,key)
 
 
 
@@ -229,6 +229,9 @@ function handleAnswerSubmit(){
 
 	updateQuestion($question_id,$category);
 	createAnswer($question_id,$answer);
+	if($send_email == TRUE){
+		emailAnswer($answer, $user_id);
+	}
 
 }
 
@@ -258,14 +261,31 @@ function createAnswer($question_id,$answer){
 	if ($db->query($newAnswerQuery) === TRUE) {
 
     	error_log("Answer record created successfully.");
-    	echo'tits';
 
 	} else {
     	echo "Error: " . $newAnswerQuery . "<br>" . $db->error;
 	}
 }
 
-function emailAnswer(){
+function emailAnswer($answer, $user_id){
+	
+	global $db;
+
+	$findUserQuery = "SELECT * FROM users WHERE id = ".$user_id." LIMIT 1";
+
+	$result = $db->query($findUserQuery);
+	$user = $result->fetch_assoc();
+
+	error_log($user['email']);
+	
+	// the message
+	$msg = "Hi there,<br/><br/>".$answer."<br/><br/>Love,<br/><br/>Zeke";
+
+	// use wordwrap() if lines are longer than 70 characters
+	$msg = wordwrap($msg,70);
+
+	// send email
+	mail($user['email'],"Asnwer From Zeke",$msg);
 
 }
 
