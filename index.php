@@ -34,20 +34,26 @@ $user = getUser();
 
 		<main id="main-content" class="row">
 			<div id="homepage-jumbo"class="jumbotron">
-				<img id="logo" class="m-y-lg center-block"src="img/logo.svg" alt="logo">
-				<h1 class="text-center display-type">Meet Zeke</h1>
-				<p class="text-center">Personalized answers to your home ownership questions. <br/>Go ahead, ask him a question.</p>
+				<img id="logo" class="m-y-lg center-block"src="img/logo.svg" alt="logo"/>
 
-				<form id="question-form" class="col-xs-12 col-lg-6 col-lg-offset-3 m-y-md" action="#" method="post" accept-charset="utf-8">
-					<input type="hidden" name="task" value="handleQuestionSubmit">
-					<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
+				<div id="homepage-jumbo-content">
+					<h1 class="text-center display-type">Meet Zeke</h1>
+					<p class="text-center">Personalized answers to your home ownership questions. <br/>Go ahead, ask him a question.</p>
 
-					<div id="homepage-question" class="round-input">
-						<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
-						<input type="submit" id="submit-question" value="Ask">
-					</div>
-				</form>
+
+					<form id="question-form" class="col-xs-12 col-lg-6 col-lg-offset-3 m-y-md" action="#" method="post" accept-charset="utf-8">
+						<input type="hidden" name="task" value="handleQuestionSubmit">
+						<input type="hidden" name="user_id" value="<?php echo($user['id']);?>">
+
+						<div id="homepage-question" class="round-input">
+							<input type="text" name="question" placeholder="What's the best way to prevent ice dams?">
+							<input type="submit" id="submit-question" value="Ask">
+						</div>
+					</form>
+
+				</div> <!-- /homepage-jumbo-content -->
 			</div>
+
 		</main><!-- /main -->	
 	</div><!-- /page-wrap -->
 

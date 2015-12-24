@@ -11,20 +11,25 @@ $(document).ready(function () {
 function submitQuestion() {
 
 	var    submitButton = $('#submit-question'),
-	       mainContent = $('#main-content');
+	       jumboContent = $('#homepage-jumbo-content');
+	       form = $('#question-form');
 
 	submitButton.click(function(e) {
 
 		e.preventDefault();
 
-		var question = $('#question-form').serialize();
+		var question = form.serialize();
 		var questionObject = {};
 		$('#question-form').serializeArray().map(function(x){questionObject[x.name] = x.value;});
 		var validQuestion = validateQuestion(questionObject);
 
 		if(validQuestion != true){alert('Question not valid'); return false;}
 		
-		mainContent.html('<div class="spinner-wrap" style="width:100%;height:500px;display:flex;align-items:center;justify-content:center"><img src="img/spinner.gif"/></div>');
+		form.fadeOut(function(){
+			jumboContent.slideUp(function(){
+				jumboContent.html('Looking for an answer...');
+			}).slideDown();
+		});
 
 		var questionResponse = $.post('controller.php', question)
 		
@@ -53,8 +58,8 @@ function validateQuestion(questionObject){
 
 //returns a response to the frontend after the question is processed.
 function showQuestionResponse(response){
-	var mainContent = $('#main-content');
-	mainContent.html(response);
+	var jumboContent = $('#homepage-jumbo-content');
+	jumboContent.html(response);
 	submitResponseEmail();
 }
 

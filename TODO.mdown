@@ -1,17 +1,6 @@
-# Home page
-- logo
-- tagline
-- input box/form
-- simple nav
-- simple footer
 
-1. User lands on homepage
-2. User enters question
-3. User submits question
-4. Submit form to server
-5. Change UI to display submitting... state
-6. Store question in the DB
-7. Cookie user
+
+
 7. Find the best possible response (could be from a list of stock answers in the DB or just strings...)
 8. Return a response to the UI
 9. Show an input box in the UI for an email address where we can respond.
@@ -20,18 +9,15 @@
 12. Show the UI a confirmation that the email was received
 13. Provide the user with an estimated response time. (based on the number of unanswered questions?)
 ---
-1. Admin answers question & categorizes question
-2. Admin submits form
-3. Admin 
 
 
-#Admin page
-- logo
-- list of questions with 
-	- question
-	- input for tag
-	- input for response
-	- submit button to save to db
-	- send button to send response to email
+TODO
 
-
+- Write method to find the best response to a question
+- Make waiting state better (spinner doesn't work)
+- Make confirmation page better
+- Comment code
+- Hide answered questions on the admin page
+	- Change question status when answer submitted
+	- Remove node from page
+	- Create method to fetch answered questions and display on another tab

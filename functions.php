@@ -6,13 +6,14 @@ function now(){
 	return date('Y-m-d H:i:s');
 }
 
-//handle users
+//handle users on page load
+//TODO - this should be a model class with methods...
 function getUser(){
 
 	//Check for a cookie,
 	if(!isset($_COOKIE['zekeUser'])) {
 		
-		//if no, create a new user record and drop a cookie
+		//if no cookie exists, create a new user record and drop a cookie
 		$user = createNewUser();
 		return $user;
 
@@ -63,6 +64,8 @@ function createNewUser(){
     	echo "Error: " . $createQuery . "<br>" . $db->error;
 	}
 
+	$db->close();
+
 }
 
 
@@ -91,7 +94,6 @@ function createNewQuestion(){
 		$selectNewQuestionQuery = "SELECT * FROM questions WHERE id = ".$newQuestion_id;
 		$newQuestion = $db->query($selectNewQuestionQuery);
 		$question = $newQuestion->fetch_assoc();
-    	//error_log($question);
 
     	getAnswer($question);
 
@@ -104,39 +106,67 @@ function createNewQuestion(){
 
 //find an answer to the question
 function getAnswer($question){
-	//Run some code to try to find a response to the question
 
-	//If answer = true && user = true
+	//vars
+	global $db;
+
+	//Run some code to try to find a response to the question
+	//Look for similar question, then look for answers with the id of the similar question
+	$findQuestionQuery = "SELECT * FROM questions WHERE question LIKE '".addslashes($question['question'])."'";
+	error_log($findQuestionQuery);
+
+	//run query
+	if ($result = $db->query($findQuestionQuery)) {
+
+		//if we have a match, go get the answer
+		if($result->num_rows > 0){
+			$matchedQuestion = $result->fetch_assoc();
+			$answerQuery = "SELECT * FROM answers WHERE question_id = ".$matchedQuestion['id'];
+			$answer = $db->query($answerQuery)->fetch_assoc();
+		}else{
+			$answer = ['answer' => "I couldn't find a great answer for that question."];
+		}
+	}else{
+		error_log($db->error);
+	}
 
 
 	//If we don't have one, return something
 	$html = '
-		<div id="homepage-jumbo"class="jumbotron">
-			<h1 class="text-center display-type">Meet Zeke</h1>
-			<p class="text-center">Got it. Let me dig in an get back to you on that one. Where can I reach you?</p>
-			<form id="response-email-form" class="col-xs-12 col-lg-6 col-lg-offset-3" action="#" method="post" accept-charset="utf-8">
-					<input type="hidden" name="task" value="updateUser">
-					<input type="hidden" name="question_id" value="'.$question['id'].'">
-					<input type="hidden" name="user_id" value="'.$question['user_id'].'">
-
-				<div id="email-response" class="round-input">
-					<input type="email" name="response_email" placeholder="Email Address">
-					<input type="submit" id="submit-response-email" value="Submit">
+			<div class="card response-card">
+				<div class="card-block">
+					<p>Hi!</p>'.
+					$answer['answer']
+					.'<p>If you like, I can follow up with a more detailed answer. Where can I reach you?</p>
 				</div>
-			</form>
-		</div>
+
+				<div class="card-block">
+
+					<form id="response-email-form" class="col-xs-12 col-lg-6 col-lg-offset-3" action="#" method="post" accept-charset="utf-8">
+						<input type="hidden" name="task" value="updateUser">
+						<input type="hidden" name="question_id" value="'.$question['id'].'">
+						<input type="hidden" name="user_id" value="'.$question['user_id'].'">
+
+						<div id="email-response" class="round-input border">
+							<input type="email" name="response_email" placeholder="Email Address">
+							<input type="submit" id="submit-response-email" value="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
 	';
 	echo $html;
 }
 
+//update a user record in the db 
+//TODO - make this more generic, currently only handles updating to add email
 function updateUser(){
 	
 	//vars
 	global $db;
 	$question_id = addslashes($_POST['question_id']);
 	$user_id = $_POST['user_id'];
-	$email = $_POST['response_email']; //This is wrong. Need to change to use AES_ENCRYPT(value,key)
-
+	$email = $_POST['response_email'];
 
 
 	//query
@@ -170,6 +200,7 @@ function updateUser(){
 
 }
 
+//get all our questions and land them on the admin page
 function getAdminQuestions(){
 	global $db;
 
@@ -217,7 +248,9 @@ function getAdminQuestions(){
 
 }
 
+//handle submission of an answer from the admin page
 function handleAnswerSubmit(){
+	
 	//vars
 	$question_id = $_POST['question_id'];
 	$user_id = $_POST['user_id'];
@@ -227,19 +260,31 @@ function handleAnswerSubmit(){
 	//check and set our send_email flag
 	if(isset($_POST['send_email'])){$send_email = TRUE; }else{ $send_email = FALSE;}
 
+	//update question
+	//TODO - add answered flag
 	updateQuestion($question_id,$category);
+
+	//create answer record
 	createAnswer($question_id,$answer);
+
+	//send an email if we asked to
 	if($send_email == TRUE){
 		emailAnswer($answer, $user_id);
 	}
 
 }
 
+//update a question record
+//TODO - extend this to handle setting the 'answered' flag as well as the category
 function updateQuestion($question_id,$category){
+	
+	// vars
 	global $db;
 
+	//query
 	$updateQuestionQuery = "UPDATE questions SET category = '".$category."' WHERE id = '".$question_id."'";
 
+	//run update
 	if ($db->query($updateQuestionQuery) === TRUE) {
 
     	error_log("Question record updated successfully.");
@@ -250,14 +295,17 @@ function updateQuestion($question_id,$category){
 	}
 }
 
+//create a new answer record in the db
 function createAnswer($question_id,$answer){
 	
+	//vars
 	global $db;
 	$user = getUser();
 
 	//$newAnswerQuery = "INSERT INTO answers VALUES"
 	$newAnswerQuery = "INSERT INTO answers (question_id, user_id, answer, date_created) VALUES ('".$question_id."','".$user['id']."','".$answer."', '".now()."')";
 
+	//insert
 	if ($db->query($newAnswerQuery) === TRUE) {
 
     	error_log("Answer record created successfully.");
@@ -267,10 +315,13 @@ function createAnswer($question_id,$answer){
 	}
 }
 
+//email answer to the user who asked a question
 function emailAnswer($answer, $user_id){
 	
+	//vars
 	global $db;
 
+	//get user who asked
 	$findUserQuery = "SELECT * FROM users WHERE id = ".$user_id." LIMIT 1";
 
 	$result = $db->query($findUserQuery);
@@ -289,7 +340,9 @@ function emailAnswer($answer, $user_id){
 
 }
 
+//helper function for getting categories, returns simple array for now.
 function getCategories(){
+
 	//get the list of posisble categories...
 	$categories = [
 		'Plumbing' 	=> 'plumbing',

@@ -43,6 +43,14 @@ a:hover{
 			height:10rem;
 		}
 
+.response-card{
+	display: flex;
+	flex-direction:column;
+	background:#FFFFFF;
+	color:#333;
+	border:1px solid #4086FC;
+	overflow: hidden;
+}
 
 .round-input{
 	display: flex;
@@ -66,10 +74,23 @@ a:hover{
 
 	.round-input input[type="submit"]{
 		color: #4086FC;
-		background:#F4F4F4;
+		background:#F1F1F1;
 		border-top-right-radius: 40px;
 		border-bottom-right-radius: 40px;
 		width: 20%;
+	}
+
+	.round-input.border input{
+		border-bottom: 1px solid #F1F1F1;
+		border-top:1px solid #F1F1F1;
+	}
+
+	.round-input.border input[type="text"]{
+		border-left:1px solid #F1F1F1;
+	}
+
+	.round-input.border input[type="email"]{
+		border-right:1px solid #F1F1F1;
 	}
 
 footer{
