@@ -105,6 +105,7 @@ function submitAnswer(){
 	answerForm.submit(function(e){
 		e.preventDefault();
 		var answer = $(this).serialize();
+		var answeredQuestionCard = $(this).closest('.admin-question-card');
 
 		console.log(answer);
 
@@ -112,8 +113,10 @@ function submitAnswer(){
 		var answerConfirm = $.post('controller.php',answer)
 
 			.done(function(response) {
-                
 				showAnswerConfirm(response);
+				answeredQuestionCard.slideUp(function(){
+					this.remove();
+				});
 			})
 
 			.fail(function(response) {

@@ -78,7 +78,8 @@ function createNewQuestion(){
 	$question = addslashes($_POST['question']);
 	$user_id = $_POST['user_id'];
 
-
+	//TODO - check for duplicate questions
+	//TODO - create separate user-question relational table for when more than one user have the same question
 
 	//query
 	$sql = "INSERT INTO questions (question, user_id, date_created) VALUES ('".$question."','".$user_id."', '".now()."')";
@@ -110,9 +111,8 @@ function getAnswer($question){
 	//vars
 	global $db;
 
-	//Run some code to try to find a response to the question
-	//Look for similar question, then look for answers with the id of the similar question
-	$findQuestionQuery = "SELECT * FROM questions WHERE question LIKE '".addslashes($question['question'])."'";
+	//Look for similar questions, except of course the one we just submitted
+	$findQuestionQuery = "SELECT * FROM questions WHERE question LIKE '".addslashes($question['question'])."' AND id !=".$question['id'];
 	error_log($findQuestionQuery);
 
 	//run query
@@ -120,11 +120,18 @@ function getAnswer($question){
 
 		//if we have a match, go get the answer
 		if($result->num_rows > 0){
+			//grab the first matching record
+			//TODO - filter for questions that are 'answered'
+			//TODO - figure out how to choose the best answer
 			$matchedQuestion = $result->fetch_assoc();
+
+			//go get the answer
+			//TODO
 			$answerQuery = "SELECT * FROM answers WHERE question_id = ".$matchedQuestion['id'];
 			$answer = $db->query($answerQuery)->fetch_assoc();
 		}else{
-			$answer = ['answer' => "I couldn't find a great answer for that question."];
+			$answer = ['answer' => "<p>I couldn't find a great answer for that question.</p>"];
+			error_log('got here');
 		}
 	}else{
 		error_log($db->error);
@@ -204,7 +211,7 @@ function updateUser(){
 function getAdminQuestions(){
 	global $db;
 
-	$getAdminQuestionsQuery = "SELECT * FROM questions ORDER BY date_created DESC";
+	$getAdminQuestionsQuery = "SELECT * FROM questions WHERE answered = 0 ORDER BY date_created DESC";
 
 	//execute
 	$result = $db->query($getAdminQuestionsQuery);
@@ -272,6 +279,8 @@ function handleAnswerSubmit(){
 		emailAnswer($answer, $user_id);
 	}
 
+	echo('Handled Answer');
+
 }
 
 //update a question record
@@ -282,7 +291,7 @@ function updateQuestion($question_id,$category){
 	global $db;
 
 	//query
-	$updateQuestionQuery = "UPDATE questions SET category = '".$category."' WHERE id = '".$question_id."'";
+	$updateQuestionQuery = "UPDATE questions SET category = '".$category."', answered = 1 WHERE id = '".$question_id."'";
 
 	//run update
 	if ($db->query($updateQuestionQuery) === TRUE) {

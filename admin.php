@@ -42,17 +42,17 @@ $user = getUser();
 				<!-- Tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 				  <li class="nav-item">
-				    <a class="nav-link active" href="#questions" role="tab" data-toggle="tab">Questions</a>
+				    <a class="nav-link active" href="#questions" role="tab" data-toggle="tab">Unanswered Questions</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Profile</a>
+				    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Answered Questions</a>
 				  </li>
-				  <li class="nav-item">
+<!-- 				  <li class="nav-item">
 				    <a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
-				  </li>
+				  </li> -->
 				</ul>
 
 				<!-- Tab panes -->
