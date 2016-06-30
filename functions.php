@@ -207,11 +207,58 @@ function updateUser(){
 
 }
 
-//get all our questions and land them on the admin page
-function getAdminQuestions(){
+//get all our unanswered questions and land them on the admin page
+function getAdminUnansweredQuestions(){
 	global $db;
 
 	$getAdminQuestionsQuery = "SELECT * FROM questions WHERE answered = 0 ORDER BY date_created DESC";
+
+	//execute
+	$result = $db->query($getAdminQuestionsQuery);
+
+	//get list of categories to populate dropdown
+    $categories = getCategories();
+    $categoriesHtml = '';
+
+    foreach ($categories as $display_name=>$value) {
+    	$categoriesHtml .= '<option value="'.$value.'">'.$display_name.'</option>';
+    }
+
+
+    //build html for each question
+    $html = '';
+    while ($row = $result->fetch_assoc()){
+    	//$rows[] = $row;
+    	$html .= '
+			<div class="card admin-question-card" id="admin-question-card-'.$row["id"].'">
+				<div class="card-block">
+					<h4 class="card-title">'.$row["question"].'</h4>
+					<p class="card-text"><small class="text-muted">Submitted by User #'.$row["user_id"].'</small></p>
+					<form class="answer-form" id="answer-form-'.$row["id"].'">
+						<input type="hidden" name="task" value="handleAnswerSubmit"/>
+						<input type="hidden" name="question_id" value="'.$row["id"].'"/>
+						<input type="hidden" name="user_id" value="'.$row["user_id"].'"/>
+						<select class="form-control m-y" name="category" value="Select Category">
+							'.$categoriesHtml.'
+						</select>
+						<textarea class="form-control" rows="3" name="answer" placeholder="Got an answer?"></textarea>
+						<input class="m-y" type="checkbox" name="send_email"/> Email this answer to the user
+						<input type="submit" value="Answer" id="submit-answer-'.$row["id"].'" class="submit-answer btn btn-primary btn-block">
+					</form>
+				</div>
+			</div>
+    	 ';
+    }
+
+    //return html to frontend
+	echo $html;  
+
+}
+
+function getAdminAnsweredQuestions(){
+	global $db;
+
+	$getAdminQuestionsQuery = "SELECT * FROM questions WHERE answered = 1 ORDER BY date_created DESC";
 
 	//execute
 	$result = $db->query($getAdminQuestionsQuery);
@@ -326,7 +373,7 @@ function createAnswer($question_id,$answer){
 
 //email answer to the user who asked a question
 function emailAnswer($answer, $user_id){
-	
+
 	//vars
 	global $db;
 
@@ -345,7 +392,7 @@ function emailAnswer($answer, $user_id){
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail($user['email'],"Asnwer From Zeke",$msg);
+	mail($user['email'],"Answer From Zeke",$msg);
 
 }
 

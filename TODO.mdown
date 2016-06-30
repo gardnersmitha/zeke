@@ -3,10 +3,7 @@
 
 7. Find the best possible response (could be from a list of stock answers in the DB or just strings...)
 8. Return a response to the UI
-9. Show an input box in the UI for an email address where we can respond.
 10. User submits email address
-11. Store the email address with a link to the question
-12. Show the UI a confirmation that the email was received
 13. Provide the user with an estimated response time. (based on the number of unanswered questions?)
 ---
 
@@ -14,10 +11,6 @@
 TODO
 
 - Write method to find the best response to a question
-- Make waiting state better (spinner doesn't work)
 - Make confirmation page better
 - Comment code
-- Hide answered questions on the admin page
-	- Change question status when answer submitted
-	- Remove node from page
-	- Create method to fetch answered questions and display on another tab
+- Create method to fetch answered questions and display on another tab

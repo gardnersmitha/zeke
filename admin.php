@@ -42,33 +42,31 @@ $user = getUser();
 				<!-- Tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 				  <li class="nav-item">
-				    <a class="nav-link active" href="#questions" role="tab" data-toggle="tab">Unanswered Questions</a>
+				    <a class="nav-link active" href="#unanswered" role="tab" data-toggle="tab">Unanswered Questions</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Answered Questions</a>
+				    <a class="nav-link" href="#answered" role="tab" data-toggle="tab">Answered Questions</a>
 				  </li>
-<!-- 				  <li class="nav-item">
-				    <a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
-				  </li> -->
 				</ul>
 
 				<!-- Tab panes -->
 				<div class="tab-content">
-				  <div role="tabpanel" class="tab-pane active" id="questions">
+				  <div role="tabpanel" class="tab-pane active" id="unanswered">
 				  	<div id="admin-question-search" class="round-input p-y-md">
 						<input type="text" name="admin-question-search" placeholder="Search">
 						<input type="submit" id="submit-admin-question-search" value="Search">
 					</div>
 					<div class="admin-questions">
-						<?php getAdminQuestions(); ?>
+						<?php getAdminUnansweredQuestions(); ?>
 					</div>
 				  </div>
-				  <div role="tabpanel" class="tab-pane" id="profile">...</div>
-				  <div role="tabpanel" class="tab-pane" id="messages">...</div>
-				  <div role="tabpanel" class="tab-pane" id="settings">...</div>
+				  <div role="tabpanel" class="tab-pane" id="answered">
+				  		<div id="admin-question-search" class="round-input p-y-md">
+							<input type="text" name="admin-question-search" placeholder="Search">
+							<input type="submit" id="submit-admin-question-search" value="Search">
+						</div>
+				  		<?php getAdminAnsweredQuestions(); ?>
+				  </div>
 				</div>
 
 			</div>
