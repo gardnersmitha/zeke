@@ -1,0 +1,12 @@
+{
+    "name": "austin.gardnersmith/zeke",
+    "authors": [
+        {
+            "name": "gardnersmitha",
+            "email": "austingardnersmith@gmail.com"
+        }
+    ],
+    "require": {
+        "emilianozublena/sheetsu-php": "^0.0.5"
+    }
+}
