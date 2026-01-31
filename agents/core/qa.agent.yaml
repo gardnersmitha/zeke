@@ -1,0 +1,74 @@
+# /agents/core/qa.agent.yaml
+# Homeowner Q&A Agent - MVP Core Agent
+
+name: "qa"
+display_name: "Homeowner Q&A Agent"
+description: "Answers homeowner questions using home context and local knowledge"
+department: "core"
+mvp: true
+
+# Model selection
+model:
+  default: "sonnet"           # claude-3-5-sonnet for most queries
+  complex_reasoning: "opus"   # escalate for complex cases
+
+# System prompt (reference to file)
+prompt:
+  system: "/prompts/core/qa-system.md"
+  examples: "/prompts/core/qa-examples.md"
+
+# Tools this agent can use
+tools:
+  - "database/home-profile"    # Read home profile
+  - "database/question"        # Log questions
+  - "external/weather"         # Get weather data
+  - "workflow/human-review"    # Escalate to human
+
+# Knowledge retrieval
+knowledge:
+  collections:
+    - "corpus"                 # General home knowledge
+    - "local"                  # South Shore specific
+    - "safety"                 # Safety rules (always included)
+  top_k: 5                     # Retrieve top 5 relevant docs
+
+# Input/output schema
+input:
+  required:
+    - question: string
+    - user_id: string
+  optional:
+    - conversation_history: array
+    - home_id: string
+
+output:
+  - answer: string
+  - confidence: float
+  - action_type: enum[diy, pro_referral, emergency, info_only]
+  - follow_up_questions: array
+  - product_recommendations: array
+
+# Routing rules
+triggers:
+  - type: "api"
+    endpoint: "/api/chat"
+  - type: "internal"
+    from: ["diagnostic", "inspector-qa"]
+
+# Downstream connections
+emits:
+  - event: "question_logged"
+    to: "content-flywheel"
+  - event: "pro_needed"
+    to: "pro-matching"
+  - event: "emergency"
+    to: "human-review"
+  - event: "product_needed"
+    to: "product-rec"
+
+# Guardrails
+guardrails:
+  max_tokens: 2000
+  timeout_ms: 30000
+  require_safety_check: true
+  safety_rules_path: "/knowledge/safety/safety-rules.md"
