@@ -352,6 +352,215 @@ User asks question...
 
 ---
 
+## Traffic Thresholds for Commercial Interest
+
+Different partners have different thresholds before they'll engage:
+
+| Partner Type | Threshold for Interest | What They Care About |
+|--------------|------------------------|----------------------|
+| Insurance (pilot) | 1-5K users in one geo, 3mo retention data | Engagement with maintenance reminders |
+| Insurance (real deal) | 10K+ users, claim reduction data | Actuarial proof of claim prevention |
+| Home Inspectors | Just show them the product | Does it make their life easier? |
+| Real Estate Agents | 10-20 agents using it locally | Social proof from peers |
+| Pro Network (plumbers etc) | 50-100 leads/month in a market | Lead quality and close rate |
+| Affiliate (standard) | None - just sign up | N/A |
+| Affiliate (custom deal) | 100K+ clicks/month | Volume |
+| Title Company | 500+ closings using Zeke | Differentiation value |
+| Brokerage | 1 successful agent pilot | Proof it helps agents |
+
+**Key Insight:** You need DENSITY in ONE market, not thin coverage everywhere.
+
+---
+
+## The Home Inspector Wedge Strategy
+
+Home inspectors are the ideal first channel because:
+
+1. **Low bar to close** - They're individuals, not enterprises. One conversation = one customer.
+2. **Built-in distribution** - Every inspection = a new homeowner who needs Zeke
+3. **Credibility transfer** - "Recommended by your home inspector" > random app
+4. **Geographic density** - Inspectors work local markets, so you get concentration
+5. **Natural relationship** - "Ask your inspector" keeps the connection alive
+6. **They have real pain** - Clients call with questions for months. Zeke solves this.
+
+### The Math
+
+```
+1 inspector ≈ 200 inspections/year
+10 inspectors in a market = 2,000 buyers/year exposed to Zeke
+Even 20% activation = 400 active users
+Those users ask questions → content flywheel starts
+Those users need pros → pro network starts
+```
+
+### Inspector Acquisition Tactics
+
+| Tactic | Cost | Expected Results |
+|--------|------|------------------|
+| Cold email/LinkedIn | Time only | 5-10% response rate |
+| ASHI/InterNACHI chapter meeting | $0-200 | 3-5 inspectors per event |
+| Free Pro tier for 6 months | $0 revenue cost | High conversion |
+| Inspector Facebook groups | Time only | Viral potential |
+| Referral bonus (inspector → inspector) | $50-100 | Network growth |
+
+---
+
+## First 100 Customers: Detailed Playbook
+
+### Phase 0: Pick ONE Metro (Week 1)
+
+**Selection Criteria:**
+- Some existing connection (easier to hustle)
+- Healthy real estate market (more transactions = more inspections)
+- Distinct seasons (more maintenance pain, more questions)
+- Not too large (can't get density in NYC/LA initially)
+
+**Strong Candidates:** Minneapolis, Denver, Austin, Raleigh, Nashville, Phoenix, Portland, Charlotte
+
+### Phase 1: The Inspector Wedge (Weeks 2-6)
+
+**Goal: 10 inspectors actively using Zeke Pro**
+
+| Week | Action | Target |
+|------|--------|--------|
+| 2 | Build minimal Inspector Pro features | MVP ready |
+| 3 | Get local inspector association list | 50+ names |
+| 3 | Cold outreach campaign | 50 emails/messages |
+| 4 | Demo calls with interested inspectors | 10 demos |
+| 4-5 | White-glove onboarding | 5-10 signed up |
+| 6 | First inspections using Zeke handoff | Clients flowing in |
+
+**The Pitch to Inspectors:**
+> "Your clients call you for months after the inspection with questions you've already answered 100 times. Zeke answers those questions AND keeps you connected to your clients for referrals. It's free for 6 months. What do you have to lose?"
+
+**Inspector Pro MVP Features:**
+- Client handoff at end of inspection (QR code or text link)
+- Client gets Zeke pre-loaded with inspection highlights
+- "Ask your inspector" escalation path
+- Inspector dashboard showing client activity
+- 6-month automated check-in ("How's that roof issue?")
+
+### Phase 2: Build Credibility (Weeks 4-8)
+
+**While inspectors onboard, establish legitimacy:**
+
+| Tactic | Effort | Credibility Gain |
+|--------|--------|------------------|
+| 2-3 inspectors as "advisors" | Low | "Built with home inspectors" |
+| Byline in local real estate publication | Medium | Press + SEO |
+| Sponsor local ASHI chapter event | $200-500 | Access + legitimacy |
+| "Minneapolis Home Maintenance Guide" PDF | Medium | Lead magnet + SEO |
+| Partner with ONE local plumber/electrician | Low | "Vetted local pros" claim |
+| Local news segment (consumer help angle) | Medium | Mass credibility |
+
+### Phase 3: Activate the Flywheel (Weeks 6-12)
+
+**Once inspector clients are flowing:**
+
+1. **Capture every question** → Feed content flywheel
+2. **Make first pro referrals** → Prove monetization model
+3. **Track first affiliate clicks** → Secondary revenue proof
+4. **Collect user testimonials** → Sales collateral for next phase
+5. **Document retention data** → Insurance pitch ammunition
+
+**Milestone Check (Week 12):**
+- 100+ active users
+- 10+ inspectors onboarded
+- First revenue (any amount)
+- Content flywheel producing 2-3 articles/week
+
+### Phase 4: Add Agent Channel (Weeks 8-16)
+
+**Three models to test:**
+
+**Model A: Pay Per Install**
+- $10-25 to agent per closing where they gift Zeke
+- Unique tracking codes per agent
+- Risk: Agents take money, don't actually promote
+
+**Model B: Premium Features for Volume**
+- Free Zeke Pro features for agents who hit 5+ installs/month
+- Creates ongoing incentive
+- Better alignment than cash
+
+**Model C: Brokerage Partnership**
+- One deal with a brokerage = 50-200 agents
+- Harder to close but much more scalable
+- Pitch: "Differentiate your agents with AI closing gift"
+
+**Agent Pitch:**
+> "Stand out from every other agent. Give your buyers an AI assistant that knows their new home. They'll remember you every time they use it. First 3 months free for your clients."
+
+### Phase 5: Partner Discounts (Weeks 10-16)
+
+**Partners who want new homeowner attention:**
+
+| Partner | What They Get | What We Get | Deal Structure |
+|---------|--------------|-------------|----------------|
+| Home warranty co | Customer engagement, reduced calls | Distribution at closing | Rev share or flat fee |
+| Moving company | Value-add service | Move-in moment handoff | Free or small fee |
+| Utility company | Customer engagement | Turn-on moment handoff | Free (marketing value) |
+| Sherwin Williams | Loyalty with new homeowners | Discount to offer users | Affiliate or co-marketing |
+| Home Depot/Lowe's | Loyalty with new homeowners | Discount to offer users | Affiliate deal |
+
+**The Pitch:**
+> "We reach new homeowners at the exact moment they have the most questions and need to buy the most stuff. Want to offer them 10% off their first order? We'll drive the traffic."
+
+---
+
+## Geographic Network Effects: Why Density Wins
+
+**The Virtuous Cycle:**
+
+```
+User asks question about ice dams in Minneapolis
+                    ↓
+Zeke knows: "In Minneapolis, this typically costs $800-1,500"
+                    ↓
+"Here are 3 roofers other Minneapolis Zeke users rated highly"
+                    ↓
+Pro gets qualified lead, does great job
+                    ↓
+Pro tells other pros: "I get great leads from Zeke"
+                    ↓
+More pros join network in Minneapolis
+                    ↓
+Better answers, more options for users
+                    ↓
+More users in Minneapolis
+                    ↓
+More data on Minneapolis homes
+                    ↓
+Better answers...
+```
+
+**Why Thin Coverage Fails:**
+- 10 users in 50 cities = no local data, no pro network, no word of mouth
+- 500 users in 1 city = local expertise, pro network, referrals, press coverage
+
+**Market Expansion Strategy:**
+1. Dominate Market 1 (500+ users, 20+ pros, 15+ inspectors)
+2. Expand to adjacent/similar market
+3. Repeat until 5 markets proven
+4. Then pursue national partnerships
+
+---
+
+## Milestone Targets
+
+| Milestone | Timeline | Why It Matters |
+|-----------|----------|----------------|
+| First inspector signed | Week 3 | Channel validated |
+| 10 inspectors active | Week 6 | Distribution engine running |
+| 100 users | Week 10 | Product-market signal |
+| First pro referral revenue | Week 12 | Business model proof |
+| 500 users in market | Week 20 | Density achieved |
+| First insurance conversation | Week 16 | B2B2C validation started |
+| 1,000 users | Week 26 | Ready for seed raise |
+| Second market launched | Week 30 | Playbook repeatable |
+
+---
+
 ## Go-to-Market Phases
 
 ### Phase 1: Prove It Works (Months 1-3)
