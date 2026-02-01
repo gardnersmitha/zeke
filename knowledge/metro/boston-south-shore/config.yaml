@@ -1,0 +1,274 @@
+# Boston South Shore Metro Configuration
+# Zeke Knowledge Base - Metro Layer
+
+metro_id: "boston-south-shore"
+display_name: "Boston South Shore"
+short_name: "South Shore"
+
+# Geographic Coverage
+state: "MA"
+region: "northeast"
+counties:
+  - "Plymouth"
+  - "Norfolk (partial)"
+
+# Primary communities served
+communities:
+  primary:
+    - name: "Hingham"
+      zip_codes: ["02043"]
+      population: 24000
+    - name: "Cohasset"
+      zip_codes: ["02025"]
+      population: 8500
+    - name: "Scituate"
+      zip_codes: ["02066"]
+      population: 19000
+    - name: "Hull"
+      zip_codes: ["02045"]
+      population: 10500
+    - name: "Norwell"
+      zip_codes: ["02061"]
+      population: 11400
+    - name: "Hanover"
+      zip_codes: ["02339"]
+      population: 15000
+    - name: "Marshfield"
+      zip_codes: ["02050"]
+      population: 26000
+    - name: "Duxbury"
+      zip_codes: ["02332"]
+      population: 16000
+    - name: "Weymouth"
+      zip_codes: ["02188", "02189", "02190", "02191"]
+      population: 57000
+    - name: "Rockland"
+      zip_codes: ["02370"]
+      population: 18000
+  secondary:
+    - name: "Pembroke"
+      zip_codes: ["02359"]
+    - name: "Braintree"
+      zip_codes: ["02184", "02185"]
+    - name: "Quincy"
+      zip_codes: ["02169", "02170", "02171"]
+    - name: "Milton"
+      zip_codes: ["02186"]
+
+# Climate Configuration
+climate:
+  zone: "5A"
+  classification: "Cold-Humid"
+  heating_degree_days: 5900
+  cooling_degree_days: 700
+  annual_snowfall_inches: 50
+  annual_rainfall_inches: 48
+  first_freeze: "October 20"
+  last_freeze: "April 20"
+  humidity_class: "humid"
+
+# Risk Profile
+risks:
+  ice_dams:
+    level: "high"
+    seasonal: true
+    peak_months: ["January", "February"]
+  frozen_pipes:
+    level: "moderate-high"
+    seasonal: true
+    peak_months: ["December", "January", "February"]
+  noreasters:
+    level: "high"
+    seasonal: true
+    peak_months: ["January", "February", "March"]
+  coastal_flooding:
+    level: "moderate"
+    notes: "Higher for oceanfront properties"
+  hurricane:
+    level: "low-moderate"
+    seasonal: true
+    peak_months: ["August", "September", "October"]
+  salt_damage:
+    level: "moderate-high"
+    notes: "Higher within 0.5 miles of ocean"
+  basement_moisture:
+    level: "moderate"
+    year_round: true
+
+# Housing Stock Profile
+housing_stock:
+  median_age: 1968
+  median_value: 750000
+
+  dominant_styles:
+    - name: "Colonial"
+      percentage: 35
+      common_issues: ["ice_dams", "drafts", "balloon_framing"]
+    - name: "Cape"
+      percentage: 25
+      common_issues: ["knee_wall_insulation", "ice_dams", "moisture"]
+    - name: "Ranch"
+      percentage: 15
+      common_issues: ["basement_moisture", "flat_roof_sections"]
+    - name: "Split-Level"
+      percentage: 10
+      common_issues: ["hvac_zoning", "insulation_gaps"]
+    - name: "Contemporary"
+      percentage: 10
+      common_issues: ["flat_roof", "large_windows"]
+    - name: "Antique/Historic"
+      percentage: 5
+      common_issues: ["lead_paint", "knob_tube", "foundation"]
+
+  era_distribution:
+    pre_1930:
+      percentage: 10
+      notes: "Historic homes, may have restrictions"
+    1930_1959:
+      percentage: 20
+      notes: "Oil heat common, asbestos likely"
+    1960_1979:
+      percentage: 30
+      notes: "Peak construction era"
+    1980_1999:
+      percentage: 25
+      notes: "Improved insulation standards"
+    2000_present:
+      percentage: 15
+      notes: "Modern construction"
+
+# Common Systems
+systems:
+  heating:
+    primary: "gas_forced_air"
+    secondary: ["oil_boiler", "gas_boiler"]
+    notes: "Oil common in older homes, gas in newer"
+
+  cooling:
+    primary: "central_ac"
+    secondary: ["window_units", "mini_split"]
+    coverage_rate: 70
+    notes: "Some older homes lack central AC"
+
+  water:
+    municipal_rate: 90
+    private_well_rate: 10
+
+  septic:
+    septic_rate: 40
+    sewer_rate: 60
+    notes: "Varies significantly by town"
+
+# Data Sources Configuration
+data_sources:
+  climate: "noaa_api"
+  costs: "manual_curated"
+  codes: "massachusetts_state"
+  issues: "manual_curated"
+
+# Cost Adjustments
+cost_adjustments:
+  base_multiplier: 1.32  # 32% above national average
+  coastal_premium: 1.15   # 15% premium for oceanfront
+  historic_premium: 1.20  # 20% premium for historic work
+  labor_market: "tight"
+
+# Local Considerations (for AI context)
+special_considerations:
+  - "Colonials and capes dominate housing stock - ice dams are the #1 winter issue"
+  - "Coastal salt air accelerates exterior deterioration - recommend marine-grade materials"
+  - "Many homes still have oil heat - oil tank condition is a concern"
+  - "Historic districts in Hingham, Cohasset, Duxbury may restrict exterior changes"
+  - "Title 5 septic inspections required for home sales"
+  - "Carpenter ants are very common - moisture control is key"
+  - "Basement moisture affects majority of older homes - sump pumps essential"
+  - "High property values mean homeowners invest in quality - price sensitivity moderate"
+  - "Nor'easters can knock out power for days - backup heat/generator valuable"
+  - "Mass Save rebates available for energy efficiency upgrades"
+
+# Contractor Licensing Requirements
+licensing:
+  electrical:
+    required: true
+    type: "MA Journeyman or Master Electrician"
+    verify_url: "https://www.mass.gov/how-to/check-a-license"
+  plumbing:
+    required: true
+    type: "MA Journeyman or Master Plumber"
+    verify_url: "https://www.mass.gov/how-to/check-a-license"
+  hvac:
+    required: true
+    type: "MA Refrigeration License (for AC/heat pump)"
+    notes: "Oil burner license required for oil systems"
+  general_contractor:
+    required: true
+    type: "MA CSL (Construction Supervisor License)"
+    threshold: "$0"  # Required for all construction work
+  roofing:
+    required: true
+    type: "MA CSL required"
+
+# Emergency Contacts
+emergency_contacts:
+  gas_emergency:
+    provider: "National Grid"
+    phone: "1-800-233-5325"
+  electric_emergency:
+    provider: "Eversource"
+    phone: "1-800-592-2000"
+  poison_control: "1-800-222-1222"
+
+# Utility Providers
+utilities:
+  electric:
+    primary: "Eversource"
+    secondary: ["National Grid (Quincy area)"]
+  gas:
+    primary: "National Grid"
+  water:
+    type: "Municipal"
+    notes: "Contact town water department"
+
+# Rebate Programs
+rebates:
+  - program: "Mass Save"
+    description: "Energy efficiency rebates for insulation, HVAC, appliances"
+    url: "https://www.masssave.com"
+    highlights:
+      - "0% financing for insulation"
+      - "Heat pump rebates up to $10,000"
+      - "Free energy audit"
+  - program: "MA Clean Energy Center"
+    description: "Renewable energy and battery storage incentives"
+    url: "https://www.masscec.com"
+
+# Seasonal Maintenance Priorities
+seasonal_priorities:
+  spring:
+    - "Check roof for winter damage"
+    - "Clean gutters"
+    - "Service AC"
+    - "Inspect foundation for new cracks"
+  summer:
+    - "Run dehumidifier in basement"
+    - "Check for carpenter ants"
+    - "Trim trees away from house"
+  fall:
+    - "Service furnace/boiler"
+    - "Winterize outdoor faucets"
+    - "Clean gutters again"
+    - "Check weatherstripping"
+  winter:
+    - "Monitor for ice dams"
+    - "Prevent frozen pipes"
+    - "Keep vents clear of snow"
+    - "Check backup heat source"
+
+# Configuration Metadata
+metadata:
+  version: "1.0"
+  created: "2026-01-15"
+  last_updated: "2026-01-20"
+  curator: "manual"
+  status: "pilot"
+  confidence: 0.90
