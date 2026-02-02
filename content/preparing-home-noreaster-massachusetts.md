@@ -1,0 +1,226 @@
+# How to Prepare Your Home for a Nor'easter
+
+*A South Shore homeowner's guide to storm preparation and recovery*
+
+If you live on the South Shore, nor'easters are part of life. These powerful coastal storms bring the trifecta of heavy snow, high winds, and coastal flooding that can cause serious damage to homes in Hingham, Cohasset, Scituate, Hull, and surrounding communities. The good news is that proper preparation dramatically reduces the risk of storm damage and helps you recover faster when the storm passes.
+
+This guide covers everything you need to know about preparing your South Shore home for nor'easters, from the week before the storm to the cleanup afterward.
+
+## Understanding Nor'easters
+
+A nor'easter is a large-scale storm system that moves up the Atlantic Coast, named for the strong northeast winds that blow in from the ocean. For the South Shore, nor'easters bring a combination of threats:
+
+**Snow and Ice:** Heavy snowfall, often 12-24 inches or more, accumulating rapidly
+**Wind:** Sustained winds of 40-60 mph with gusts exceeding 80 mph in severe storms
+**Coastal Flooding:** Storm surge and wave action can flood low-lying coastal areas
+**Power Outages:** Downed trees and lines cause widespread outages lasting days
+
+The severity varies by storm, but any nor'easter deserves respect and preparation.
+
+## One Week Before: Long-Range Preparation
+
+When meteorologists start tracking a potential nor'easter, use that lead time wisely.
+
+### Stock Emergency Supplies
+
+- [ ] Water: 1 gallon per person per day for at least 3 days
+- [ ] Non-perishable food for 3-5 days
+- [ ] Manual can opener
+- [ ] Flashlights and extra batteries
+- [ ] Battery-powered or hand-crank radio
+- [ ] First aid kit
+- [ ] Medications for at least a week
+- [ ] Phone chargers and backup battery packs
+- [ ] Cash (ATMs do not work without power)
+- [ ] Pet food and supplies if applicable
+
+### Check Your Equipment
+
+- [ ] Test generator if you have one (run it for 15-20 minutes)
+- [ ] Verify you have fuel for generator (and know safe storage practices)
+- [ ] Check snow removal equipment: snowblower, shovels, roof rake
+- [ ] Ensure you have ice melt or sand available
+- [ ] Test sump pump operation
+- [ ] Verify backup sump pump battery is charged
+
+*Generator safety:* Never run a generator indoors, in a garage, or near windows. Carbon monoxide kills. Place generators at least 20 feet from your home with exhaust pointing away from buildings.
+
+### Review Your Plan
+
+- [ ] Know your flood zone (FEMA maps are available online)
+- [ ] Review evacuation routes if you are in a flood-prone area
+- [ ] Confirm your homeowner's insurance covers wind damage
+- [ ] Review flood insurance policy if you have one (standard homeowner's policies do not cover flooding)
+- [ ] Know where your emergency shutoffs are: water, gas, electrical
+
+## 48-72 Hours Before: Active Preparation
+
+Once a nor'easter is confirmed and tracking toward the South Shore, it is time to prepare your home.
+
+### Exterior Preparation
+
+**Secure Loose Items**
+
+- [ ] Bring in or secure patio furniture, grills, and decorations
+- [ ] Store trash cans in the garage
+- [ ] Secure or remove bird feeders and baths
+- [ ] Take down hanging plants and wind chimes
+- [ ] Remove or secure anything that could become a projectile
+
+*Wind reality:* In an 80 mph gust, a patio chair becomes a battering ram. Anything not secured can damage your home, your car, or your neighbor's property.
+
+**Protect Vulnerable Areas**
+
+- [ ] Cover basement window wells if flooding is expected
+- [ ] Check that sump pump discharge line is clear
+- [ ] Clear gutters and downspouts (blocked gutters cause ice dams faster)
+- [ ] Trim any dead branches you can safely reach
+- [ ] Park cars away from trees if possible
+
+**Coastal-Specific Preparation**
+
+If you live in a flood zone or near the water:
+
+- [ ] Move valuables to upper floors
+- [ ] Document belongings with photos or video for insurance
+- [ ] Know your evacuation route and have a bag packed
+- [ ] Secure boats or move them to safer locations
+- [ ] Fill bathtub with water (for flushing toilets if water service is interrupted)
+
+### Interior Preparation
+
+- [ ] Charge all devices: phones, tablets, laptops, battery packs
+- [ ] Fill prescriptions if running low
+- [ ] Do laundry (you may not have power for days)
+- [ ] Run dishwasher and take out trash
+- [ ] Locate emergency supplies and flashlights
+- [ ] Set refrigerator and freezer to coldest settings (food stays cold longer if power goes out)
+- [ ] Fill vehicles with gas
+
+### Know the Forecast
+
+- [ ] Monitor local weather: WBZ, WCVB, or the National Weather Service
+- [ ] Note expected start time, peak intensity, and end time
+- [ ] Understand the primary threats: snow amounts, wind speeds, flood potential
+- [ ] Sign up for your town's emergency alerts if you have not already
+
+## During the Storm: Safety First
+
+Once the storm arrives, stay inside and stay safe.
+
+### Monitor Conditions
+
+- [ ] Watch for flooding in basement
+- [ ] Listen for unusual sounds (tree damage, roof damage)
+- [ ] Keep one phone charged and limit use to preserve battery
+- [ ] Monitor news for emergency information
+
+### If You Lose Power
+
+- [ ] Keep refrigerator and freezer doors closed (food stays safe 4-6 hours in fridge, 24-48 hours in full freezer)
+- [ ] Use flashlights, not candles (fire risk)
+- [ ] Run generator safely if you have one
+- [ ] If using a fireplace or wood stove, ensure damper is open
+- [ ] Dress in layers if the house cools down
+- [ ] Check on elderly or vulnerable neighbors if safe to do so
+
+### Do Not
+
+- [ ] Do not go outside during peak wind and storm conditions
+- [ ] Do not drive unless absolutely necessary
+- [ ] Do not touch downed power lines (assume all are live)
+- [ ] Do not use gas stove or oven for heating
+- [ ] Do not run generator indoors or in attached garage
+
+## After the Storm: Assessment and Recovery
+
+When the storm passes, resist the urge to immediately go outside. Wait until conditions are clearly safe.
+
+### Safety Check First
+
+- [ ] Check for gas smell (leave immediately and call National Grid if detected)
+- [ ] Look for obvious structural damage before moving through the house
+- [ ] Check that water is running and draining properly
+- [ ] Test a few outlets and lights to confirm power situation
+
+### Exterior Assessment
+
+When safe to go outside:
+
+- [ ] Walk around the house and look for damage
+- [ ] Check roof for missing shingles, damaged flashing, or visible holes
+- [ ] Look for downed trees or large branches
+- [ ] Check for damaged siding, broken windows, or other obvious issues
+- [ ] Inspect foundation for cracks or signs of water intrusion
+- [ ] Check outbuildings, fences, and other structures
+
+*Documentation is critical:* Take photos and video of all damage before making any repairs. You will need this for insurance claims.
+
+### Roof and Snow Load
+
+Heavy snow puts stress on your roof:
+
+- [ ] Look for sagging in the roof line
+- [ ] Check for doors that suddenly stick (may indicate structural stress)
+- [ ] Listen for unusual creaking
+- [ ] If snow exceeds 2 feet, consider professional removal
+
+*Snow removal safety:* Roof rakes allow you to remove snow from ground level. Never climb on a snow-covered roof. Professional snow removal typically costs $300-500 for a South Shore colonial.
+
+### Water Intrusion
+
+- [ ] Check basement for flooding
+- [ ] Look for water stains on ceilings and walls
+- [ ] Inspect around windows and doors for leaks
+- [ ] Check attic for signs of water intrusion
+
+### Insurance Claims
+
+If you have damage:
+
+- [ ] Contact your insurance company promptly
+- [ ] Document everything with photos before any cleanup
+- [ ] Keep receipts for all emergency repairs
+- [ ] Do not throw away damaged items until the adjuster has seen them
+- [ ] Get multiple repair estimates
+
+## Generator Considerations for South Shore Homes
+
+After experiencing extended power outages, many homeowners consider generator options.
+
+**Portable Generators ($500-1,500)**
+- Pros: Lower cost, no installation required
+- Cons: Manual operation, limited capacity, fuel storage needs
+- Best for: Basic needs (refrigerator, lights, phone charging, sump pump)
+
+**Whole-House Standby Generators ($10,000-20,000 installed)**
+- Pros: Automatic operation, powers entire house, runs on natural gas or propane
+- Cons: High cost, requires installation and permits
+- Best for: Homes with frequent outages, medical equipment needs, or work-from-home requirements
+
+*South Shore consideration:* Coastal areas experience more frequent and longer outages due to exposure. If you are near the water and lose power multiple times per year, a standby generator may be worth the investment.
+
+## Building Long-Term Storm Resilience
+
+Beyond preparation for individual storms, consider improvements that make your home more resilient:
+
+**Roof:** Impact-resistant shingles, proper flashing, ice and water shield on eaves
+**Windows:** Storm windows or impact-resistant glass in exposed areas
+**Landscaping:** Remove dead or dying trees, trim branches away from the house
+**Electrical:** Whole-house surge protector to protect electronics when power returns
+**Drainage:** Ensure proper grading and functioning sump pump with battery backup
+
+## Emergency Contacts for South Shore Homeowners
+
+Keep these numbers accessible:
+
+- **Police/Fire/Medical:** 911
+- **Eversource (power outages):** 800-592-2000
+- **National Grid (gas emergencies):** 800-233-5325
+- **Your town's emergency management number**
+- **Insurance company claims line**
+- **Trusted contractor or handyman**
+
+---
+
+**Every storm is different, and every home faces different risks.** A waterfront property in Scituate has different concerns than a colonial set back from the coast in Norwell. Your home's age, construction, and location all affect how you should prepare. Ask Zeke about storm preparation specific to your home, and we will help you prioritize based on your actual risks.

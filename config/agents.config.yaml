@@ -1,0 +1,208 @@
+# /config/agents.config.yaml
+# Agent Registry - All agents with MVP flags and status
+
+version: "1.0"
+
+# Cost controls
+cost_controls:
+  daily_budget: 50.00           # Hard stop at $50/day
+
+  alerts:
+    - threshold: 25.00
+      notify: "founder@zeke.com"
+    - threshold: 40.00
+      notify: "founder@zeke.com"
+      action: "downgrade_to_haiku"
+
+  per_user_limits:
+    free_tier: 5                # Questions per day
+    core_tier: 50
+    premium_tier: unlimited
+
+# Agent Registry
+agents:
+  # ============================================
+  # CORE PRODUCT AGENTS
+  # ============================================
+  core:
+    qa:
+      path: "/agents/core/qa.agent.yaml"
+      mvp: true
+      status: "active"
+      description: "Answers homeowner questions using home context"
+
+    home-profile:
+      path: "/agents/core/home-profile.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Builds and maintains home profiles"
+
+    diagnostic:
+      path: "/agents/core/diagnostic.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Triage and diagnostic reasoning"
+
+    pro-matching:
+      path: "/agents/core/pro-matching.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Matches homeowners with local pros"
+
+    product-rec:
+      path: "/agents/core/product-rec.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Product recommendations with affiliate links"
+
+    proactive:
+      path: "/agents/core/proactive.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Proactive seasonal outreach"
+
+    memory:
+      path: "/agents/core/memory.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Conversation memory management"
+
+  # ============================================
+  # INSPECTOR PRO AGENTS
+  # ============================================
+  inspector:
+    report-ingestion:
+      path: "/agents/inspector/report-ingestion.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Parse and extract from inspection reports"
+
+    client-handoff:
+      path: "/agents/inspector/client-handoff.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Generate client handoff materials"
+
+    client-followup:
+      path: "/agents/inspector/client-followup.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Automated 30/60/90 day check-ins"
+
+    report-assistant:
+      path: "/agents/inspector/report-assistant.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Help write inspection reports"
+
+    inspector-qa:
+      path: "/agents/inspector/inspector-qa.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Ask Your Inspector feature"
+
+  # ============================================
+  # GTM / MARKETING AGENTS
+  # ============================================
+  gtm:
+    content-flywheel:
+      path: "/agents/gtm/content-flywheel.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Question to content pipeline"
+
+    content-generation:
+      path: "/agents/gtm/content-generation.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Generate SEO articles"
+
+    local-seo:
+      path: "/agents/gtm/local-seo.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Local SEO optimization"
+
+    email-marketing:
+      path: "/agents/gtm/email-marketing.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Email sequence generation"
+
+    social-media:
+      path: "/agents/gtm/social-media.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Social media engagement"
+
+  # ============================================
+  # SALES / BD AGENTS
+  # ============================================
+  sales:
+    inspector-outreach:
+      path: "/agents/sales/inspector-outreach.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Cold outreach to inspectors"
+
+    agent-outreach:
+      path: "/agents/sales/agent-outreach.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Real estate agent outreach"
+
+    partnership-dev:
+      path: "/agents/sales/partnership-dev.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "B2B partnership development"
+
+    lead-qualification:
+      path: "/agents/sales/lead-qualification.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Lead scoring and qualification"
+
+  # ============================================
+  # OPERATIONS AGENTS
+  # ============================================
+  ops:
+    pro-network:
+      path: "/agents/ops/pro-network.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Manage pro network"
+
+    content-qa:
+      path: "/agents/ops/content-qa.agent.yaml"
+      mvp: true
+      status: "planned"
+      description: "Content quality review"
+
+    customer-success:
+      path: "/agents/ops/customer-success.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "User health monitoring"
+
+    analytics:
+      path: "/agents/ops/analytics.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Business analytics and reporting"
+
+    support-triage:
+      path: "/agents/ops/support-triage.agent.yaml"
+      mvp: false
+      status: "planned"
+      description: "Support ticket routing"
+
+# MVP Launch Checklist
+mvp_agents:
+  - "core/qa"
+  - "core/home-profile"
+  - "core/diagnostic"
+  - "gtm/content-flywheel"
+  - "gtm/content-generation"
+  - "sales/inspector-outreach"
+  - "ops/content-qa"

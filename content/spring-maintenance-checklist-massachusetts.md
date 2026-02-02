@@ -1,0 +1,211 @@
+# Spring Home Maintenance Checklist for Massachusetts Homeowners
+
+*Essential tasks for South Shore homeowners from March through May*
+
+After a long New England winter, your home deserves some attention. The freeze-thaw cycles, ice dams, and nor'easters that batter South Shore homes from November through March take their toll. Spring is your opportunity to assess winter damage, tackle repairs before they worsen, and prepare your home for the warmer months ahead.
+
+This comprehensive checklist covers everything South Shore homeowners need to address in spring, organized by priority and location.
+
+## Why Spring Maintenance Matters
+
+Winter is hard on Massachusetts homes. The combination of heavy snow loads, ice dams, temperature swings, and coastal exposure creates conditions that can damage roofs, siding, foundations, and landscaping. Problems that seem minor in April become expensive repairs by August if left unaddressed.
+
+Spring maintenance is also about preparation. The work you do now sets you up for a comfortable summer and an easier time when fall arrives.
+
+## March: Early Assessment (While Snow Lingers)
+
+Even before the snow fully melts, you can begin evaluating your home's condition.
+
+### Exterior Visual Inspection
+
+Walk around your home on a mild day and note any visible issues:
+
+- [ ] Look for damaged or missing shingles visible from ground level
+- [ ] Check for ice dam damage along eaves and in valleys
+- [ ] Note any siding that has buckled, cracked, or come loose
+- [ ] Look for damaged gutters or downspouts
+- [ ] Check foundation for new cracks or evidence of water intrusion
+
+*Do not climb on the roof while snow or ice remains. Note concerns and address them when conditions allow.*
+
+### Interior Check
+
+- [ ] Inspect ceilings below the roof for water stains (signs of ice dam damage or roof leaks)
+- [ ] Check attic for daylight through the roof deck, moisture, or new stains
+- [ ] Look for mold or mildew in corners and along exterior walls
+- [ ] Test sump pump operation before spring rains begin
+
+### Early Tasks
+
+- [ ] Order any materials needed for spring projects
+- [ ] Schedule contractor appointments (they book up fast in spring)
+- [ ] Start planning any larger summer projects
+
+## April: Active Maintenance Month
+
+April is when most spring maintenance happens on the South Shore. The snow is gone, temperatures are workable, and you have time before summer activities take over.
+
+### Roof and Gutters
+
+**Roof Inspection**
+
+- [ ] Safely inspect roof from a ladder (or hire a professional)
+- [ ] Look for damaged, curled, or missing shingles
+- [ ] Check flashing around chimney, vents, and skylights
+- [ ] Inspect roof valleys for debris accumulation
+- [ ] Look for signs of moss or algae growth
+
+*South Shore tip:* Coastal homes face salt air exposure all winter. Check metal flashing and vents for corrosion that inland homes do not experience.
+
+**Gutter Maintenance**
+
+- [ ] Clean all gutters thoroughly (winter debris accumulates)
+- [ ] Check gutter seams and end caps for leaks
+- [ ] Verify downspouts direct water at least 4 feet from foundation
+- [ ] Repair any sections damaged by ice or snow
+- [ ] Consider gutter guards if cleaning is a recurring hassle
+
+*Cost note:* Professional gutter cleaning on the South Shore runs $150-300 for a typical colonial. DIY is free but requires safe ladder practices.
+
+### Exterior Surfaces
+
+**Siding and Trim**
+
+- [ ] Wash siding to remove winter grime and salt residue
+- [ ] Inspect caulking around windows and doors
+- [ ] Check for wood rot on trim, especially at corners and near ground level
+- [ ] Touch up paint where needed to protect exposed wood
+- [ ] Look for gaps where utilities enter the house
+
+**Foundation**
+
+- [ ] Clear any debris that accumulated against the foundation
+- [ ] Check for new cracks (mark them with tape to monitor)
+- [ ] Ensure ground slopes away from the house for drainage
+- [ ] Inspect basement windows and window wells
+- [ ] Check that basement floor drains are clear
+
+### HVAC Transition
+
+- [ ] Replace furnace filter one final time for the season
+- [ ] Schedule AC tune-up before the summer rush
+- [ ] Clean or replace AC filter
+- [ ] Clear debris from around outdoor AC condenser
+- [ ] Test AC operation on a warm day
+- [ ] Consider having ductwork inspected if you notice dust or uneven cooling
+
+*Scheduling tip:* HVAC companies on the South Shore are slammed from late May through September. Book your AC tune-up in April for better availability and pricing. Expect $100-200 for a standard service call.
+
+### Windows and Doors
+
+- [ ] Remove storm windows and install screens
+- [ ] Clean all windows inside and out
+- [ ] Inspect weatherstripping and replace if worn
+- [ ] Check window operation (they should open and close smoothly)
+- [ ] Lubricate door hinges and locks
+- [ ] Inspect thresholds and sweeps on exterior doors
+
+### Plumbing
+
+- [ ] Turn on outdoor faucets and check for leaks from winter freeze damage
+- [ ] Inspect hose bibs for drips when turned on and off
+- [ ] Check exposed pipes in basement and crawl space
+- [ ] Flush water heater to remove sediment (drain a few gallons)
+- [ ] Test all interior faucets and toilets for proper operation
+
+## May: Outdoor Focus and Final Tasks
+
+By May, attention shifts to outdoor spaces and finishing any remaining items from the spring list.
+
+### Landscaping and Drainage
+
+- [ ] Rake winter debris from lawn and beds
+- [ ] Check that drainage swales and channels are clear
+- [ ] Inspect retaining walls for movement or damage
+- [ ] Trim shrubs away from the house (maintain 12-inch clearance)
+- [ ] Clear debris from window wells
+- [ ] Plan any grading corrections needed for drainage
+
+*Coastal consideration:* Salt spray can damage landscaping near the water. Rinse plants with fresh water in early spring to remove salt residue, and consider salt-tolerant species for exposed areas.
+
+### Deck and Patio
+
+- [ ] Inspect deck boards for rot, warping, or loose fasteners
+- [ ] Check deck structure and posts for damage
+- [ ] Clean deck surface (pressure wash or scrub)
+- [ ] Apply deck sealant or stain if needed
+- [ ] Inspect railings for stability
+- [ ] Check patio pavers for heaving or settling
+
+*Cost note:* Deck cleaning and sealing costs $200-500 for a typical deck if you hire a professional. DIY deck cleaning solution and sealer runs $50-150 in materials.
+
+### Safety Systems
+
+- [ ] Test smoke detectors and carbon monoxide detectors
+- [ ] Replace batteries (even if detectors are hardwired)
+- [ ] Check fire extinguisher pressure gauge
+- [ ] Verify exterior lighting works
+- [ ] Test GFCI outlets with the built-in test button
+
+### Pest Prevention
+
+- [ ] Look for signs of carpenter ants (sawdust piles near wood)
+- [ ] Check for termite mud tubes on foundation
+- [ ] Seal any gaps where insects could enter
+- [ ] Trim tree branches away from the house
+- [ ] Consider a professional pest inspection if you notice concerns
+
+*South Shore alert:* Carpenter ants are extremely common in coastal Massachusetts. They are attracted to moisture-damaged wood. If you find them, address both the ants and the underlying moisture issue.
+
+## Spring Maintenance Priority List
+
+If time is limited, focus on these high-priority items:
+
+**Must Do:**
+1. Clean gutters and check downspouts
+2. Inspect roof for winter damage
+3. Test AC before you need it
+4. Turn on and check outdoor faucets
+5. Test smoke and CO detectors
+
+**Should Do:**
+1. Wash exterior and remove salt residue
+2. Check caulking around windows and doors
+3. Inspect foundation for cracks
+4. Clean and inspect deck
+5. Flush water heater
+
+**Schedule Soon:**
+1. AC tune-up appointment
+2. Any roof or siding repairs identified
+3. Window or door repairs
+4. Deck sealing if due
+5. Professional pest inspection if needed
+
+## Common Spring Discoveries on South Shore Homes
+
+Be prepared for these common findings:
+
+**Ice Dam Damage:** Water stains on ceilings, damaged shingles, lifted flashing. Address the damage now and the root cause (attic insulation and ventilation) before next winter.
+
+**Foundation Cracks:** Some cracking is normal due to freeze-thaw cycles. Hairline cracks are usually cosmetic; cracks wider than 1/4 inch or showing movement need professional evaluation.
+
+**Wood Rot:** Especially common at trim corners, window sills, and anywhere wood contacts the ground. Caught early, rot can be repaired. Left alone, it requires replacement.
+
+**Pest Activity:** Ants, termites, and rodents are more visible in spring. Early detection prevents larger infestations.
+
+## Creating a Spring Maintenance Schedule
+
+Break the work into manageable weekends:
+
+**Weekend 1:** Exterior walk-around, roof inspection, gutter cleaning
+
+**Weekend 2:** HVAC prep, window/door maintenance, interior checks
+
+**Weekend 3:** Foundation and drainage, plumbing checks
+
+**Weekend 4:** Deck and patio, landscaping, final touch-ups
+
+---
+
+**Spring reveals what winter hid.** Every South Shore home emerges from winter with its own set of issues to address. Maybe your colonial in Cohasset weathered ice dams, or your cape in Marshfield has drainage concerns after the spring thaw. Ask Zeke about your specific spring maintenance priorities based on your home's age, style, and what winter threw at it. We will help you tackle the most important items first.

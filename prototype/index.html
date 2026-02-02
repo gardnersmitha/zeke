@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeke - Your Home Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4086FC;
+            --light-blue: #91BAFF;
+            --dark-blue: #2C5AA0;
+            --activity-blue: #4086FC;
+            --reminder-yellow: #F5A623;
+            --content-green: #7ED321;
+            --purchase-red: #D0021B;
+            --bg-gray: #F5F7FA;
+            --card-white: #FFFFFF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --success-green: #10B981;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-gray);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .header-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 80px;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Chat Screen */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 140px);
+        }
+
+        .home-context-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 16px 20px;
+            margin: 12px;
+            border-radius: 12px;
+        }
+
+        .home-context-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .home-context-card p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .message {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.user {
+            align-items: flex-end;
+        }
+
+        .message.zeke {
+            align-items: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .message.user .message-bubble {
+            background: var(--primary-blue);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.zeke .message-bubble {
+            background: white;
+            color: var(--text-primary);
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            padding: 0 8px;
+        }
+
+        /* Response Cards */
+        .response-card {
+            background: var(--bg-gray);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .response-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .response-card-icon {
+            font-size: 16px;
+        }
+
+        .response-card-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .response-card-body {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .response-card-action {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--primary-blue);
+            font-weight: 500;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        /* Chat Input */
+        .chat-input-container {
+            padding: 12px;
+            background: white;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-gray);
+            border-radius: 24px;
+            padding: 8px 16px;
+        }
+
+        .chat-input-wrapper input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .chat-input-wrapper button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .input-icon {
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Tasks Screen */
+        .tasks-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .tasks-header .day-counter {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .tasks-header .day-message {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .progress-container {
+            margin-top: 16px;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.3);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: white;
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        .task-section {
+            padding: 16px;
+        }
+
+        .task-section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .task-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .task-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .task-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #D1D5DB;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .task-card.completed .task-checkbox {
+            background: var(--success-green);
+            border-color: var(--success-green);
+            color: white;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .task-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .task-type {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .task-type.activity {
+            background: rgba(64, 134, 252, 0.1);
+            color: var(--activity-blue);
+        }
+
+        .task-type.reminder {
+            background: rgba(245, 166, 35, 0.1);
+            color: var(--reminder-yellow);
+        }
+
+        .task-type.content {
+            background: rgba(126, 211, 33, 0.1);
+            color: var(--content-green);
+        }
+
+        .task-type.purchase {
+            background: rgba(208, 2, 27, 0.1);
+            color: var(--purchase-red);
+        }
+
+        .task-points {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .task-arrow {
+            color: #D1D5DB;
+            font-size: 18px;
+        }
+
+        /* Home Screen */
+        .home-header {
+            background: white;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .home-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 12px;
+        }
+
+        .home-address {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .home-details {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .systems-section {
+            padding: 16px;
+        }
+
+        .system-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .system-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-gray);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .system-content {
+            flex: 1;
+        }
+
+        .system-name {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .system-details {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .system-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .system-status.good {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-green);
+        }
+
+        .system-status.warning {
+            background: rgba(245, 166, 35, 0.1);
+            color: var(--reminder-yellow);
+        }
+
+        /* Tab Bar */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            display: flex;
+            border-top: 1px solid #E5E7EB;
+            padding: 8px 0;
+            padding-bottom: max(8px, env(safe-area-inset-bottom));
+        }
+
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .tab-item.active {
+            color: var(--primary-blue);
+        }
+
+        .tab-item .tab-icon {
+            font-size: 24px;
+        }
+
+        .tab-item .tab-label {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Task Detail Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 24px 24px 0 0;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 24px;
+            padding-bottom: max(24px, env(safe-area-inset-bottom));
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .modal-close {
+            background: var(--bg-gray);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: 600;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .modal-section {
+            margin-bottom: 24px;
+        }
+
+        .modal-section h4 {
+            color: var(--primary-blue);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .modal-section p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .modal-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .modal-image {
+            background: var(--bg-gray);
+            border-radius: 12px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .modal-tip {
+            background: rgba(64, 134, 252, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .modal-tip-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .modal-cta {
+            background: var(--success-green);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 24px;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--text-secondary);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            30% {
+                transform: translateY(-4px);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-icon">Z</div>
+        <h1>Zeke</h1>
+        <div class="header-icon">&#9881;</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Chat Tab -->
+        <div id="chat-tab" class="tab-content active">
+            <div class="chat-container">
+                <div class="home-context-card">
+                    <h3>&#127968; 1985 Colonial &bull; Hingham, MA</h3>
+                    <p>Ask me anything about your home - I'm here to help!</p>
+                </div>
+
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message zeke">
+                        <div class="message-bubble">
+                            Hi! I'm Zeke, your personal home assistant. I know your 1985 Colonial in Hingham - from your 12-year-old Carrier furnace to your coastal location. What can I help you with today?
+                        </div>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <span class="input-icon">&#128247;</span>
+                        <input type="text" id="chat-input" placeholder="Ask a question...">
+                        <button id="send-btn">&#10148;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Tab -->
+        <div id="tasks-tab" class="tab-content">
+            <div class="tasks-header">
+                <div class="day-counter">Day 12</div>
+                <div class="day-message">Things are shaping up nicely around here!</div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 68%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>68% complete</span>
+                        <span>142 points</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-section">
+                <div class="task-section-title">This Week</div>
+
+                <div class="task-card" onclick="openTaskModal('shutoff')">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <div class="task-title">Find the master water shutoff</div>
+                        <div class="task-meta">
+                            <span class="task-type activity">Activity</span>
+                            <span class="task-points">2 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#8250;</span>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <div class="task-title">Check outdoor outlets</div>
+                        <div class="task-meta">
+                            <span class="task-type reminder">Reminder</span>
+                            <span class="task-points">3 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#8250;</span>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <div class="task-title">Snap a photo of your boiler</div>
+                        <div class="task-meta">
+                            <span class="task-type activity">Activity</span>
+                            <span class="task-points">5 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#8250;</span>
+                </div>
+            </div>
+
+            <div class="task-section">
+                <div class="task-section-title">Seasonal (Winter)</div>
+
+                <div class="task-card">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <div class="task-title">Winterize outdoor faucets</div>
+                        <div class="task-meta">
+                            <span class="task-type reminder">Reminder</span>
+                            <span class="task-points">3 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#8250;</span>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <div class="task-title">Read: Preventing Ice Dams</div>
+                        <div class="task-meta">
+                            <span class="task-type content">Content</span>
+                            <span class="task-points">2 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#8250;</span>
+                </div>
+            </div>
+
+            <div class="task-section">
+                <div class="task-section-title">Completed &#10003;</div>
+
+                <div class="task-card completed">
+                    <div class="task-checkbox">&#10003;</div>
+                    <div class="task-content">
+                        <div class="task-title">Set up your home profile</div>
+                        <div class="task-meta">
+                            <span class="task-type activity">Activity</span>
+                            <span class="task-points">10 pts</span>
+                        </div>
+                    </div>
+                    <span class="task-arrow">&#10003;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Tab -->
+        <div id="home-tab" class="tab-content">
+            <div class="home-header">
+                <div class="home-icon">&#127968;</div>
+                <div class="home-address">123 Main Street</div>
+                <div class="home-details">Colonial &bull; Built 1985 &bull; 2,400 sqft</div>
+            </div>
+
+            <div class="systems-section">
+                <div class="task-section-title">Your Systems</div>
+
+                <div class="system-card">
+                    <div class="system-icon">&#128293;</div>
+                    <div class="system-content">
+                        <div class="system-name">Heating</div>
+                        <div class="system-details">Carrier Gas Furnace &bull; 12 years old</div>
+                    </div>
+                    <span class="system-status warning">Aging</span>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-icon">&#10052;</div>
+                    <div class="system-content">
+                        <div class="system-name">Cooling</div>
+                        <div class="system-details">Lennox Central AC &bull; 12 years old</div>
+                    </div>
+                    <span class="system-status good">Good</span>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-icon">&#128167;</div>
+                    <div class="system-content">
+                        <div class="system-name">Water Heater</div>
+                        <div class="system-details">AO Smith 50 gal &bull; 6 years old</div>
+                    </div>
+                    <span class="system-status good">Good</span>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-icon">&#127969;</div>
+                    <div class="system-content">
+                        <div class="system-name">Roof</div>
+                        <div class="system-details">Asphalt Shingle &bull; 9 years old</div>
+                    </div>
+                    <span class="system-status good">Good</span>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-icon">&#9889;</div>
+                    <div class="system-content">
+                        <div class="system-name">Electrical</div>
+                        <div class="system-details">200 amp panel &bull; Updated 2005</div>
+                    </div>
+                    <span class="system-status good">Good</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tab Bar -->
+    <nav class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('chat')">
+            <span class="tab-icon">&#128172;</span>
+            <span class="tab-label">Chat</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('tasks')">
+            <span class="tab-icon">&#128203;</span>
+            <span class="tab-label">Tasks</span>
+        </div>
+        <div class="tab-item" onclick="switchTab('home')">
+            <span class="tab-icon">&#127968;</span>
+            <span class="tab-label">Home</span>
+        </div>
+    </nav>
+
+    <!-- Task Detail Modal -->
+    <div class="modal-overlay" id="task-modal" onclick="closeTaskModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title">Find the master water shutoff</h3>
+                <button class="modal-close" onclick="closeTaskModal()">&#10005;</button>
+            </div>
+
+            <div class="modal-section">
+                <h4>Why?</h4>
+                <p>It's important to know where this is so that you can quickly and easily stop a leak or outflow of water into your house. Water damage is one of the most expensive types of home repairs.</p>
+            </div>
+
+            <div class="modal-section">
+                <h4>How?</h4>
+                <p>The shutoff valve is usually located in the basement, probably in an area nearest to the street. Look for a copper pipe with a red or yellow rubber handle.</p>
+
+                <div class="modal-images">
+                    <div class="modal-image">&#128688;</div>
+                    <div class="modal-image">&#128688;</div>
+                </div>
+            </div>
+
+            <div class="modal-tip">
+                <div class="modal-tip-title">&#128161; For your 1985 Colonial:</div>
+                <p>Older colonials in Hingham often have the shutoff near the front foundation wall, close to where the main enters from the street. Check near your water meter.</p>
+            </div>
+
+            <button class="modal-cta" onclick="completeTask()">&#10003; Found it!</button>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function switchTab(tab) {
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab + '-tab').classList.add('active');
+
+            // Update tab bar
+            document.querySelectorAll('.tab-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
+        // Task modal
+        function openTaskModal(taskId) {
+            document.getElementById('task-modal').classList.add('active');
+        }
+
+        function closeTaskModal(event) {
+            if (!event || event.target.classList.contains('modal-overlay')) {
+                document.getElementById('task-modal').classList.remove('active');
+            }
+        }
+
+        function completeTask() {
+            alert('Task completed! +2 points');
+            closeTaskModal();
+        }
+
+        // Chat functionality
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        const mockResponses = {
+            'ice dam': {
+                text: `Ice dams are a common problem for colonials like yours in Hingham, especially with your roof's pitch. Here's what causes them and how to prevent them:
+
+<strong>Why it happens:</strong> Heat escapes through your roof, melts snow from below, and the water refreezes at the cold eaves, creating a dam.
+
+<strong>Prevention options:</strong>`,
+                cards: [
+                    { type: 'diy', icon: '&#128295;', title: 'DIY: Heat Cables', body: '$45-80 &bull; Easy install along roof edge', action: 'See on Amazon &rarr;' },
+                    { type: 'pro', icon: '&#128119;', title: 'Pro: Insulation Upgrade', body: '$800-2,000 &bull; Fixes the root cause', action: 'See 3 local pros &rarr;' }
+                ]
+            },
+            'furnace': {
+                text: `Your Carrier furnace is 12 years old - that's getting into the later part of its lifespan (typical is 15-20 years). Here's what I'd recommend:
+
+<strong>Now:</strong> Schedule a tune-up before winter. This extends life and catches issues early.
+
+<strong>Plan for:</strong> Start budgeting for replacement in 3-5 years.`,
+                cards: [
+                    { type: 'pro', icon: '&#128119;', title: 'Schedule Tune-Up', body: '$80-150 &bull; Recommended annually', action: 'See HVAC pros &rarr;' }
+                ]
+            },
+            'default': {
+                text: `Great question! Based on what I know about your 1985 Colonial in Hingham, I can help with that. Let me look into the specifics for your home...`,
+                cards: []
+            }
+        };
+
+        function addMessage(text, isUser, cards = []) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'zeke'}`;
+
+            let cardsHtml = '';
+            if (cards.length > 0) {
+                cardsHtml = cards.map(card => `
+                    <div class="response-card">
+                        <div class="response-card-header">
+                            <span class="response-card-icon">${card.icon}</span>
+                            <span class="response-card-title">${card.title}</span>
+                        </div>
+                        <div class="response-card-body">${card.body}</div>
+                        <a href="#" class="response-card-action">${card.action}</a>
+                    </div>
+                `).join('');
+            }
+
+            messageDiv.innerHTML = `
+                <div class="message-bubble">${text}${cardsHtml}</div>
+                <span class="message-time">Just now</span>
+            `;
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message zeke';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-bubble">
+                    <div class="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+
+        function getResponse(input) {
+            const lowerInput = input.toLowerCase();
+            if (lowerInput.includes('ice dam')) return mockResponses['ice dam'];
+            if (lowerInput.includes('furnace') || lowerInput.includes('heat')) return mockResponses['furnace'];
+            return mockResponses['default'];
+        }
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, true);
+            chatInput.value = '';
+
+            // Show typing indicator
+            addTypingIndicator();
+
+            // Simulate response delay
+            setTimeout(() => {
+                removeTypingIndicator();
+                const response = getResponse(text);
+                addMessage(response.text, false, response.cards);
+            }, 1500);
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

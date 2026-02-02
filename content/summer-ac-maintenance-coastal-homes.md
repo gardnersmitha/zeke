@@ -1,0 +1,292 @@
+# Summer AC Maintenance for Coastal Massachusetts Homes
+
+*Keeping your air conditioning running efficiently in Hingham, Cohasset, Scituate, and the South Shore*
+
+Living near the water on the South Shore means beautiful views, ocean breezes, and unique challenges for your home's cooling systems. The combination of humidity, salt air, and coastal fog creates an environment that is harder on air conditioning equipment than inland locations. Proper maintenance is not just about comfort; it is about protecting your investment and ensuring your AC survives the South Shore environment.
+
+This guide covers everything coastal homeowners need to know about maintaining their air conditioning systems through the summer months.
+
+## Why Coastal AC Needs Extra Attention
+
+Air conditioning equipment near the ocean faces conditions that inland systems do not.
+
+### Salt Air Corrosion
+
+Salt-laden air accelerates corrosion on metal components:
+
+- Condenser coils degrade faster
+- Electrical connections corrode
+- Cabinet and housing materials deteriorate
+- Refrigerant lines and fittings are affected
+
+*Impact:* Coastal AC systems typically have shorter lifespans than identical systems installed just a few miles inland. A unit that might last 15-20 years inland may only last 10-15 years near the water.
+
+### High Humidity
+
+Coastal Massachusetts has higher humidity levels than inland areas, especially in summer:
+
+- AC systems work harder to dehumidify
+- Drain lines handle more water and are more likely to clog
+- Interior components stay wet longer, promoting mold growth
+- Efficiency suffers when humidity is extreme
+
+### Marine Layer and Fog
+
+Morning fog and marine layer conditions mean:
+
+- Moisture condensing on outdoor equipment
+- Extended damp conditions that promote corrosion
+- More stress on drainage systems
+
+## Pre-Season Preparation: Before Summer Heat
+
+Get your AC ready before you need it. May is the ideal time on the South Shore.
+
+### DIY Pre-Season Checklist
+
+**Outdoor Unit (Condenser)**
+
+- [ ] Clear debris within 2 feet of the unit (leaves, mulch, plants)
+- [ ] Gently rinse coils with garden hose (not pressure washer)
+- [ ] Check that the unit is level (settling can affect operation)
+- [ ] Inspect for visible damage or corrosion
+- [ ] Ensure the disconnect switch is accessible
+- [ ] Listen for unusual sounds during initial startup
+
+**Indoor Components**
+
+- [ ] Replace or clean air filter (critical for efficiency)
+- [ ] Check that supply and return vents are not blocked
+- [ ] Inspect visible drain line and pan for clogs or standing water
+- [ ] Test thermostat operation
+- [ ] Check that registers are open in rooms you want to cool
+
+**System Test**
+
+- [ ] Turn AC on when outdoor temp is above 60 degrees Fahrenheit
+- [ ] Verify cool air comes from vents within 15-20 minutes
+- [ ] Listen for unusual sounds
+- [ ] Check for any unusual odors (musty, burning, chemical)
+
+### Professional Pre-Season Service
+
+Schedule a professional tune-up annually, ideally in spring before the rush.
+
+**What a tune-up includes:**
+
+- Refrigerant level check and recharge if needed
+- Electrical connection inspection and tightening
+- Condenser and evaporator coil cleaning
+- Drain line clearing
+- Thermostat calibration
+- Overall system performance evaluation
+
+*Cost:* $100-200 for a standard tune-up on the South Shore.
+
+*Coastal bonus:* Ask your technician about corrosion protection treatments for the outdoor unit. Some companies offer coil coatings that extend equipment life in coastal environments.
+
+## Monthly Summer Maintenance
+
+During peak cooling season, regular attention keeps systems running efficiently.
+
+### Air Filter: The Most Important Task
+
+Change or clean your filter every 1-3 months depending on type and usage:
+
+- **1-inch fiberglass:** Monthly replacement
+- **1-inch pleated:** Monthly to every 6 weeks
+- **4-inch pleated:** Every 3-4 months
+- **Washable filters:** Monthly cleaning
+
+*Why it matters:* A dirty filter restricts airflow, forcing the system to work harder. This increases energy consumption by 5-15% and can lead to frozen coils and compressor damage.
+
+*Coastal factor:* Higher humidity means filters may need more frequent attention, as damp filters catch particles more readily but also restrict airflow faster.
+
+### Drain Line Maintenance
+
+The condensate drain carries moisture removed from your air outside or to a drain. In humid coastal conditions, this drain handles significant water.
+
+**Monthly maintenance:**
+
+- [ ] Locate your drain line exit point (usually a white PVC pipe outside)
+- [ ] Verify water drips out during operation (system is draining properly)
+- [ ] If no water visible, the line may be clogged
+
+**Preventing clogs:**
+
+- Pour 1/4 cup white vinegar through the drain line monthly
+- Alternatively, use condensate drain tablets
+- Consider installing a safety float switch if you do not have one (shuts system off if drain backs up)
+
+*Warning sign:* Water around your indoor unit, dripping from registers, or a musty smell near the air handler indicates drain problems.
+
+### Outdoor Unit Attention
+
+**Weekly during heavy use:**
+
+- [ ] Quick visual inspection for debris or damage
+- [ ] Verify airflow is not obstructed
+- [ ] Listen for unusual sounds during operation
+
+**Monthly:**
+
+- [ ] Gently rinse coils with garden hose (cool unit first)
+- [ ] Remove any vegetation that has grown too close
+- [ ] Check for signs of corrosion or damage
+
+*Coastal tip:* The weekly rinse is more important near the water. Salt deposits on coils reduce efficiency. Some homeowners near the ocean rinse their condenser coils weekly during summer.
+
+## Humidity Control in Coastal Homes
+
+Air conditioning does two jobs: cooling and dehumidifying. In coastal Massachusetts, the dehumidification function is often the bigger challenge.
+
+### Signs of Humidity Problems
+
+- Condensation on windows (even with AC running)
+- Musty smell in certain rooms
+- Clammy feeling despite cool temperatures
+- Mold or mildew appearing in bathrooms or closets
+
+### Solutions for High Humidity
+
+**Thermostat settings:**
+
+- Set fan to "auto" not "on" (allows condensed moisture to drain rather than recirculating)
+- Consider a slightly higher temperature with lower humidity versus very cold and damp
+
+**Supplemental dehumidification:**
+
+- Portable dehumidifiers in problem areas
+- Whole-house dehumidifier integrated with HVAC
+- Dehumidifier in basement (where moisture often enters)
+
+**Ventilation:**
+
+- Use bathroom and kitchen exhaust fans during and after moisture-producing activities
+- Ensure dryer vents outdoors properly
+- Consider an energy recovery ventilator (ERV) for better moisture control
+
+*Ideal indoor humidity:* 30-50%. Above 60% promotes mold growth.
+
+## Recognizing When Something Is Wrong
+
+Early detection of problems prevents expensive repairs.
+
+### Warning Signs Requiring Attention
+
+**Reduced Cooling**
+- Warm air from vents
+- System runs constantly without reaching set temperature
+- Uneven cooling between rooms
+
+**Unusual Sounds**
+- Grinding or squealing (motor or belt issues)
+- Rattling (loose parts or debris in unit)
+- Clicking during operation (electrical issue)
+- Hissing (possible refrigerant leak)
+
+**Unusual Odors**
+- Musty smell (mold in system, often in drain or coils)
+- Burning smell (electrical problem - turn off immediately)
+- Chemical smell (refrigerant leak - requires professional attention)
+
+**Visible Issues**
+- Ice forming on refrigerant lines or coils
+- Water leaking from indoor unit
+- Visible rust or corrosion on outdoor unit
+
+**Electrical Concerns**
+- Breaker tripping repeatedly
+- System cycling on and off frequently (short cycling)
+- Thermostat issues (display problems, unresponsive)
+
+### When to Call a Professional
+
+Call an HVAC technician if you experience:
+
+- Any burning smell or visible smoke
+- Ice formation on lines or coils
+- Refrigerant leak signs (hissing, chemical smell, reduced cooling)
+- Water leaking from indoor unit
+- Repeated breaker trips
+- System not turning on at all
+- Significant reduction in cooling performance
+
+*Cost note:* Service calls on the South Shore typically run $100-150 plus parts and labor. Weekend or evening calls may be higher.
+
+## Energy Efficiency Tips for Coastal Cooling
+
+Running AC efficiently saves money and extends equipment life.
+
+### Temperature Settings
+
+- 78 degrees Fahrenheit when home is a good balance of comfort and efficiency
+- Each degree lower increases energy use by about 3%
+- Use programmable or smart thermostats to raise temperature when away
+
+### Reduce Cooling Load
+
+- Close blinds on south and west windows during afternoon
+- Use ceiling fans to feel cooler at higher thermostat settings
+- Avoid heat-producing activities (cooking, dryer) during hottest parts of day
+- Ensure attic is properly vented
+- Seal air leaks around windows and doors
+
+### System Efficiency
+
+- Keep filters clean
+- Ensure ductwork is properly sealed
+- Close vents in unused rooms (if your system can handle it)
+- Shade the outdoor condenser if possible (without restricting airflow)
+
+## End of Season: Winterizing Your AC
+
+When cooling season ends (typically late September on the South Shore), prepare your system for winter.
+
+### Fall Shutdown Checklist
+
+- [ ] Run system one final time to verify operation (for spring reference)
+- [ ] Replace filter one last time
+- [ ] Turn off power to outdoor unit at disconnect
+- [ ] Clear any debris from around outdoor unit
+- [ ] Consider covering outdoor unit (breathable cover only - not plastic tarp)
+- [ ] Clear drain line one final time
+
+### Coastal Winterizing
+
+- [ ] Rinse outdoor unit thoroughly to remove salt buildup before winter
+- [ ] Inspect for corrosion and note any areas to watch
+- [ ] Consider corrosion inhibitor spray on metal surfaces
+
+*Do not cover too early:* If you cover the unit while it is still warm enough to run, rodents may nest inside. Wait until weather is consistently cold.
+
+## Special Considerations for Coastal Properties
+
+### Flood Zone Concerns
+
+If your home is in a flood zone:
+
+- Outdoor units should be elevated above expected flood levels
+- Consider flood sensors that shut off equipment
+- Document equipment condition for insurance purposes
+
+### Hurricane and Storm Preparation
+
+Before a significant coastal storm:
+
+- Turn off AC at the thermostat and breaker
+- Consider covering outdoor unit if projectiles are a concern
+- Have system inspected after any flooding or significant storm damage
+
+### Extended Life in Salt Air
+
+To maximize equipment lifespan near the coast:
+
+- Specify coastal-rated or corrosion-resistant equipment when replacing
+- Consider units with coated coils and corrosion-resistant cabinets
+- Budget for more frequent replacement (10-15 years instead of 15-20)
+- Maintain religiously - neglect accelerates corrosion damage
+
+---
+
+**Your AC works hard in coastal conditions.** The combination of humidity, salt air, and South Shore weather puts extra demands on cooling systems. Whether you have a newer central air system or window units supplementing an older home, regular maintenance extends equipment life and keeps your home comfortable. Ask Zeke about your specific cooling setup and we will help you develop a maintenance routine that accounts for your home's location and system type.

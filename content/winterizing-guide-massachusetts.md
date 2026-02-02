@@ -1,0 +1,203 @@
+# Complete Winter Prep Checklist for Massachusetts Homeowners
+
+*A month-by-month guide for South Shore homeowners from October through December*
+
+New England winters test your home like nothing else. From ice dams to frozen pipes, from drafty windows to furnace failures, the cold months reveal every weakness in your home's defenses. But with the right preparation, you can keep your South Shore home warm, safe, and damage-free all winter long.
+
+This guide breaks down exactly what to do and when to do it, with special attention to the coastal considerations that affect homes in Hingham, Cohasset, Scituate, Hull, and the surrounding South Shore communities.
+
+## October: The Preparation Month
+
+October is your window to prepare without urgency. The weather is still mild enough for outdoor work, but winter is close enough to motivate action.
+
+### Outdoor Tasks
+
+**Week 1-2: Gutters and Drainage**
+
+- [ ] Clean all gutters and downspouts thoroughly
+- [ ] Check that downspouts direct water at least 4 feet from foundation
+- [ ] Inspect gutter seams and end caps for leaks
+- [ ] Consider gutter guards if you have many trees
+
+*Why it matters:* Clogged gutters are a leading cause of ice dams and foundation water problems. Getting them clean now prevents bigger headaches later.
+
+**Week 2-3: Exterior Inspection**
+
+- [ ] Walk around your home and inspect siding for cracks or gaps
+- [ ] Check caulking around windows and doors
+- [ ] Look for gaps where utilities enter the house
+- [ ] Inspect the roof from ground level (binoculars help)
+- [ ] Check flashing around chimneys and vents
+
+*Coastal note:* Salt air accelerates deterioration of caulk and sealants. South Shore homes often need recaulking more frequently than inland properties.
+
+**Week 3-4: Outdoor Equipment**
+
+- [ ] Winterize and store lawn mower (drain fuel or add stabilizer)
+- [ ] Disconnect garden hoses from outdoor faucets
+- [ ] Shut off interior valves to outdoor faucets if you have them
+- [ ] Install faucet covers on exterior hose bibs
+- [ ] Store outdoor furniture or cover it securely
+- [ ] Drain and store fountains or birdbaths
+
+### Indoor Tasks
+
+**Heating System**
+
+- [ ] Schedule furnace or boiler tune-up (do this early, before the rush)
+- [ ] Replace furnace filter
+- [ ] Bleed radiators if you have hot water heat
+- [ ] Test thermostat operation
+- [ ] Check that all heating vents are clear of furniture
+
+*Cost note:* A furnace tune-up typically runs $100-200 on the South Shore. It is worth it. A well-maintained system runs more efficiently and is less likely to fail on the coldest night of the year.
+
+**Windows and Doors**
+
+- [ ] Inspect weatherstripping on all exterior doors
+- [ ] Check window glazing and replace if cracked
+- [ ] Install storm windows if you have them
+- [ ] Consider window insulation film for drafty single-pane windows
+- [ ] Check threshold seals on exterior doors
+
+## November: The Protection Month
+
+November is when you complete critical winterization tasks before the first hard freeze, which typically arrives on the South Shore in mid-to-late November.
+
+### Outdoor Tasks
+
+**Week 1-2: Final Yard Work**
+
+- [ ] Rake leaves away from foundation (wet leaves trap moisture)
+- [ ] Cut back perennials and remove dead annuals
+- [ ] Apply final fertilizer to lawn (winterizer formula)
+- [ ] Mulch around foundation plantings
+- [ ] Trim any branches that could fall on the house in a storm
+
+**Week 2-3: Protect Vulnerable Areas**
+
+- [ ] Wrap young trees and shrubs to protect from deer and snow damage
+- [ ] Install snow stakes along driveway edges
+- [ ] Check that you know where your septic tank is (avoid driving over it with snow removal equipment)
+- [ ] Mark sprinkler heads and landscape features that might be hidden by snow
+
+*Coastal consideration:* If your property faces the ocean or is exposed to nor'easters, secure or store any items that could become projectiles in high winds: patio umbrellas, lightweight furniture, decorations.
+
+### Indoor Tasks
+
+**Week 1-2: Pipes and Plumbing**
+
+- [ ] Locate and label your main water shutoff valve
+- [ ] Insulate exposed pipes in basement, crawl space, and garage
+- [ ] Know where pipes run through exterior walls (these are freeze risks)
+- [ ] If you have a crawl space, check that vents are closed or covered
+
+*Important:* On the South Shore, the water main typically enters through the front foundation wall, near where the main comes in from the street. Make sure everyone in your household knows where the shutoff is and how to operate it.
+
+**Week 2-3: Emergency Preparation**
+
+- [ ] Test smoke detectors and carbon monoxide detectors
+- [ ] Replace batteries in all detectors
+- [ ] Check fire extinguisher(s) - recharge or replace if needed
+- [ ] Stock emergency supplies: flashlights, batteries, water, non-perishable food
+- [ ] Know how to safely operate your fireplace or wood stove
+
+**Week 3-4: Attic Check**
+
+- [ ] Inspect attic insulation depth
+- [ ] Look for signs of moisture or past ice dam damage
+- [ ] Check that soffit vents are not blocked
+- [ ] Seal any visible air leaks around penetrations
+
+## December: The Monitoring Month
+
+By December, your major preparation should be complete. Now it is about monitoring and maintenance.
+
+### Weekly Tasks
+
+- [ ] Check furnace filter (replace monthly during heavy use)
+- [ ] Monitor for ice dam formation after snow events
+- [ ] Keep walkways and driveways clear
+- [ ] Check basement for any signs of moisture infiltration
+
+### After Each Major Storm
+
+- [ ] Inspect roof for damage or excessive snow load
+- [ ] Check that exhaust vents (dryer, furnace, water heater) are not blocked by snow
+- [ ] Clear snow away from foundation if drifts are piling up
+- [ ] Test exterior doors to ensure they open freely (in case of emergency exit)
+
+*Snow load note:* Most South Shore roofs can handle 20-30 pounds per square foot. Wet, heavy snow (common during nor'easters) weighs about 20 pounds per cubic foot. If snow accumulation exceeds 2 feet, especially wet snow, consider having it professionally removed.
+
+### Holiday Safety
+
+- [ ] Inspect holiday lights for frayed wires before hanging
+- [ ] Do not overload electrical circuits
+- [ ] Keep Christmas trees watered and away from heat sources
+- [ ] Never leave candles unattended
+- [ ] Create a "leaving for the holidays" checklist if traveling
+
+## Special Considerations for Coastal South Shore Homes
+
+Living near the water adds beauty to your home, but it also adds winterization challenges.
+
+### Salt and Corrosion
+
+- Rinse exterior metal fixtures and hardware before winter to remove salt residue
+- Consider applying protective coatings to metal railings, light fixtures, and house numbers
+- Check garage door hardware and hinges for corrosion
+
+### Storm Surge and Flooding
+
+- Know your flood zone designation
+- If you are in a flood-prone area, have sandbags or flood barriers available
+- Ensure sump pump is operational and consider a battery backup
+- Keep important documents in waterproof containers or a safe deposit box
+
+### Wind Protection
+
+- Trim trees away from power lines and structures
+- Secure anything that could blow away: trash cans, lawn ornaments, flags
+- Consider impact-resistant storm doors if you face prevailing winter winds
+
+## The Cost of Prevention vs. Repair
+
+Winterization requires an investment of time and some money, but consider the alternative costs:
+
+| Problem | Prevention Cost | Repair Cost |
+|---------|-----------------|-------------|
+| Frozen pipes | $20-50 (insulation) | $1,000-4,000 (repairs + water damage) |
+| Ice dam damage | $100-500 (heat cables, sealing) | $3,000-10,000+ (roof, interior repairs) |
+| Furnace failure | $150-200 (tune-up) | $500-1,500 (emergency repair) or $5,000-15,000 (replacement) |
+| Drafty windows | $50-200 (weatherstripping, film) | $300-600/window (replacement) |
+
+The math is clear: a few hundred dollars spent in October and November can save thousands in January and February.
+
+## Your Winter Prep Action Plan
+
+Here is the simplified version if you are short on time:
+
+**Must Do (Critical):**
+1. Clean gutters
+2. Service heating system
+3. Disconnect hoses and protect outdoor faucets
+4. Know your water shutoff location
+5. Test smoke and CO detectors
+
+**Should Do (Important):**
+1. Inspect and seal windows and doors
+2. Check attic insulation
+3. Insulate exposed pipes
+4. Stock emergency supplies
+5. Inspect roof for damaged shingles
+
+**Nice to Do (When Time Allows):**
+1. Install storm windows
+2. Add window insulation film
+3. Upgrade weatherstripping
+4. Apply protective coatings to exterior metal
+5. Create a home maintenance binder
+
+---
+
+**Every home is different.** The winterization needs for a 1920s colonial in Hingham are not the same as a 1990s cape in Marshfield. Ask Zeke for a personalized winter prep checklist based on your home's age, construction, heating system, and location. We will help you prioritize what matters most for your specific situation.
