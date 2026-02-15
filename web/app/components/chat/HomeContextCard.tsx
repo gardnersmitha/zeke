@@ -40,7 +40,7 @@ export const HomeContextCard: React.FC<HomeContextCardProps> = ({ profile }) => 
             {profile.yearBuilt} {profile.homeType} • {profile.city}, {profile.state}
           </p>
           <p className="text-xs text-text-secondary mt-0.5">
-            "Ask me anything about your home - I'm here to help!"
+            &quot;Ask me anything about your home - I&apos;m here to help!&quot;
           </p>
         </div>
       </div>

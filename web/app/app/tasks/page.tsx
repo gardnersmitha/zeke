@@ -22,7 +22,7 @@ export default function TasksPage() {
           </h2>
 
           <p className="text-base text-text-secondary mb-6">
-            We're building out the gamified task system where you'll be able to
+            We&apos;re building out the gamified task system where you&apos;ll be able to
             complete activities, earn points, and level up your homeownership skills.
           </p>
 
