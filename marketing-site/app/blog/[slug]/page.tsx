@@ -4,6 +4,8 @@ import Card from '@/components/ui/Card';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/StructuredData';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -51,9 +53,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const relatedPosts = getRelatedPosts(post, 3);
   const readingTime = calculateReadingTime(post.content);
-
-  // Dynamically import the MDX content
-  const MDXContent = (await import(`@/content/blog/${slug}.mdx`)).default;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zeke.ai';
 
@@ -138,7 +137,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            <MDXContent />
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
           </div>
 
           {/* Tags */}

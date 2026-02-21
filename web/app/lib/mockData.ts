@@ -1,5 +1,36 @@
 import { HomeProfile, Message, ResponseCard } from "@/types";
 
+// Helper function to auto-detect metadata from response cards and content
+const detectResponseMetadata = (
+  content: string,
+  cards?: ResponseCard[]
+): Message['metadata'] => {
+  const metadata: Message['metadata'] = {
+    hasActionableTask: false,
+    hasProRecommendation: false,
+    hasProductRecommendation: false,
+  };
+
+  // Check for actionable keywords in content
+  const actionableKeywords = [
+    'should', 'recommend', 'need to', 'fix', 'repair', 'replace',
+    'install', 'check', 'inspect', 'maintain', 'clean', 'prevent'
+  ];
+  metadata.hasActionableTask = actionableKeywords.some(keyword =>
+    content.toLowerCase().includes(keyword)
+  );
+
+  // Check response cards for pro and product recommendations
+  if (cards && cards.length > 0) {
+    metadata.hasProRecommendation = cards.some(card => card.type === 'pro');
+    metadata.hasProductRecommendation = cards.some(card =>
+      card.type === 'product' || card.type === 'diy'
+    );
+  }
+
+  return metadata;
+};
+
 export const defaultHomeProfile: HomeProfile = {
   id: "1",
   address: "123 Main Street",
@@ -53,7 +84,7 @@ export const defaultHomeProfile: HomeProfile = {
 };
 
 export const generateMockResponse = (question: string): Message => {
-  const responses: { [key: string]: { content: string; cards?: ResponseCard[] } } = {
+  const responses: { [key: string]: { content: string; cards?: ResponseCard[]; metadata?: Message['metadata'] } } = {
     "ice dam": {
       content: `Ice dams are common in Hingham, especially on colonials like yours. Here's what causes them and how to prevent them:
 
@@ -77,6 +108,11 @@ Heat escapes through your roof, melts snow, which then refreezes at the edge cau
           link: "#pros",
         },
       ],
+      metadata: {
+        hasActionableTask: true,
+        hasProRecommendation: true,
+        hasProductRecommendation: true,
+      },
     },
     default: {
       content: `That's a great question! Based on your 1985 Colonial in Hingham, MA, I'd recommend a few approaches.
@@ -91,11 +127,15 @@ I can help you understand this better and connect you with local professionals w
 
   const response = matchedKey ? responses[matchedKey] : responses.default;
 
+  // Auto-detect metadata if not explicitly provided
+  const metadata = response.metadata || detectResponseMetadata(response.content, response.cards);
+
   return {
     id: Date.now().toString(),
     sender: "zeke",
     content: response.content,
     timestamp: new Date(),
     responseCards: response.cards,
+    metadata,
   };
 };

@@ -11,7 +11,9 @@ A Progressive Web App (PWA) built with Next.js 15 that serves as an AI homeowner
   - Home context card showing current home profile
   - Response cards (DIY, Pro, Product recommendations)
   - Photo and voice input UI (placeholders)
-  - Mock AI responses with intelligent pattern matching
+  - **Real AI integration** with Vercel AI SDK (streaming responses)
+  - Provider-agnostic (supports OpenAI, Anthropic, etc.)
+  - Home profile context passed to AI for personalized advice
   - Feedback actions (thumbs up/down, save to tasks)
 
 - **Home Profile Screen**: Manage home information
@@ -53,6 +55,7 @@ A Progressive Web App (PWA) built with Next.js 15 that serves as an AI homeowner
 - **Styling**: Tailwind CSS 3.4.1
 - **Icons**: Lucide React 0.344.0
 - **Runtime**: React 18.3.1
+- **AI**: Vercel AI SDK with OpenAI/Anthropic support
 
 ## Project Structure
 
@@ -60,6 +63,9 @@ A Progressive Web App (PWA) built with Next.js 15 that serves as an AI homeowner
 /Users/ags/Code/zeke/web/app/
 ├── app/
 │   ├── page.tsx              # Chat screen (main)
+│   ├── api/
+│   │   └── chat/
+│   │       └── route.ts      # AI chat API endpoint (streaming)
 │   ├── home/
 │   │   └── page.tsx          # Home profile screen
 │   ├── tasks/
@@ -144,12 +150,29 @@ Error:            #D0021B
    npm install
    ```
 
-3. Run the development server:
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Edit `.env.local` and add your API keys:
+   ```bash
+   # Choose 'openai' or 'anthropic'
+   AI_PROVIDER=openai
+
+   # For OpenAI (if AI_PROVIDER=openai)
+   OPENAI_API_KEY=sk-your-openai-api-key-here
+
+   # For Anthropic (if AI_PROVIDER=anthropic)
+   ANTHROPIC_API_KEY=sk-ant-your-anthropic-api-key-here
+   ```
+
+4. Run the development server:
    ```bash
    npm run dev
    ```
 
-4. Open your browser to:
+5. Open your browser to:
    ```
    http://localhost:3000
    ```
@@ -213,16 +236,45 @@ All data is stored in the browser's localStorage:
    - **Android**: Tap Menu > Add to Home Screen
 3. The app will open in standalone mode (full screen)
 
+## AI Backend Configuration
+
+The app uses Vercel AI SDK to provide real AI responses with streaming support. The system is provider-agnostic and can work with multiple AI providers.
+
+### Supported Providers
+
+- **OpenAI**: GPT-4 Turbo (default)
+- **Anthropic**: Claude 3.5 Sonnet
+
+### How It Works
+
+1. **Home Context Integration**: When you chat with Zeke, your home profile (address, systems, etc.) is passed as context to the AI
+2. **Streaming Responses**: Messages stream in real-time for a better user experience
+3. **Error Handling**: Graceful error messages if the API is unavailable
+4. **Provider Switching**: Change providers by updating the `AI_PROVIDER` environment variable
+
+### API Keys
+
+Get your API keys from:
+- OpenAI: https://platform.openai.com/api-keys
+- Anthropic: https://console.anthropic.com/settings/keys
+
+### Customizing the System Prompt
+
+The AI's behavior is controlled by the system prompt in `/app/api/chat/route.ts`. You can customize:
+- Personality and tone
+- Response format
+- Special instructions for handling home-related queries
+
 ## Known Limitations (Phase 1)
 
-- AI responses are mocked (no real Claude API integration yet)
 - Tasks screen is a placeholder
 - Photo upload is UI only (no actual upload)
 - Voice input is UI only (no actual recording)
 - Documents can't be uploaded yet
-- No backend or database (localStorage only)
+- No backend database (localStorage only)
 - No user authentication
 - No push notifications
+- Response metadata parsing (for action buttons) needs refinement
 
 ## Next Steps for Phase 2
 

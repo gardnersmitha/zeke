@@ -65,14 +65,93 @@ export default function ChatPage() {
     // Show loading state
     setIsLoading(true);
 
-    // Simulate AI response delay
-    setTimeout(() => {
+    try {
+      // Call the real API
+      // Filter out welcome message and only include actual conversation
+      const conversationMessages = updatedMessages
+        .filter(msg => msg.id !== 'welcome')
+        .map(msg => ({
+          role: msg.sender === 'user' ? 'user' : 'assistant',
+          content: msg.content.trim(), // Ensure no empty content
+        }))
+        .filter(msg => msg.content.length > 0); // Remove any empty messages
+
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: conversationMessages,
+          homeProfile: homeProfile,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      // Read the streaming response
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+      let aiResponseContent = '';
+
+      // Create AI message that we'll update as we stream
+      const aiMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        sender: "zeke",
+        content: "",
+        timestamp: new Date(),
+      };
+
+      if (reader) {
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          // Decode the chunk and add to buffer
+          buffer += decoder.decode(value, { stream: true });
+
+          // Process complete lines
+          const lines = buffer.split('\n');
+          // Keep the last incomplete line in the buffer
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (line.startsWith('0:')) {
+              // Extract the text content from the stream (Vercel AI SDK format)
+              const text = line.slice(2).replace(/^"|"$/g, '');
+              aiResponseContent += text;
+            } else if (line.trim() && !line.startsWith('d:')) {
+              // Fallback: treat any non-empty line that's not metadata as content
+              aiResponseContent += line;
+            }
+          }
+
+          // Update the message with accumulated content
+          if (aiResponseContent) {
+            aiMessage.content = aiResponseContent;
+            const messagesWithAI = [...updatedMessages, aiMessage];
+            setMessages(messagesWithAI);
+          }
+        }
+      }
+
+      // Save final messages
+      const finalMessages = [...updatedMessages, aiMessage];
+      storage.saveMessages(finalMessages);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error calling chat API:', error);
+      // Fall back to mock response on error
       const aiResponse = generateMockResponse(content);
       const finalMessages = [...updatedMessages, aiResponse];
       setMessages(finalMessages);
       storage.saveMessages(finalMessages);
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (

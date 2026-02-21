@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Message } from "@/types";
 import { ResponseCardComponent } from "./ResponseCard";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 interface MessageBubbleProps {
   message: Message;
 }
 
 export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const isUser = message.sender === "user";
   const time = new Date(message.timestamp).toLocaleTimeString("en-US", {
     hour: "numeric",
@@ -15,7 +17,11 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
-      <div className={`max-w-[85%] ${isUser ? "order-2" : "order-1"}`}>
+      <div
+        className={`max-w-[85%] ${isUser ? "order-2" : "order-1"}`}
+        onMouseEnter={() => !isUser && setIsHovered(true)}
+        onMouseLeave={() => !isUser && setIsHovered(false)}
+      >
         <div
           className={`rounded-2xl px-4 py-2 ${
             isUser
@@ -45,18 +51,42 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
           </div>
         )}
 
-        {/* Feedback Actions (only for Zeke messages) */}
+        {/* Feedback and Action Buttons (only for Zeke messages) - Show on hover */}
         {!isUser && (
-          <div className="flex items-center gap-3 mt-2 px-2">
-            <button className="text-text-secondary hover:text-primary transition-colors">
-              <span className="text-lg">👍</span>
+          <div
+            className={`flex items-center gap-2 mt-2 px-2 transition-opacity duration-200 ${
+              isHovered ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <button
+              className="p-1 text-text-secondary hover:text-green-600 transition-colors"
+              title="Helpful"
+            >
+              <ThumbsUp className="w-3.5 h-3.5" />
             </button>
-            <button className="text-text-secondary hover:text-primary transition-colors">
-              <span className="text-lg">👎</span>
+            <button
+              className="p-1 text-text-secondary hover:text-red-600 transition-colors"
+              title="Not helpful"
+            >
+              <ThumbsDown className="w-3.5 h-3.5" />
             </button>
-            <button className="text-sm text-primary hover:text-primary-dark transition-colors font-medium ml-2">
-              Save to Tasks
-            </button>
+
+            {/* Conditional Action Buttons based on response metadata */}
+            {message.metadata?.hasActionableTask && (
+              <button className="text-xs text-text-secondary hover:text-primary transition-colors font-medium ml-1">
+                Save to Tasks
+              </button>
+            )}
+            {message.metadata?.hasProRecommendation && (
+              <button className="text-xs text-text-secondary hover:text-primary transition-colors font-medium ml-1">
+                View Pros
+              </button>
+            )}
+            {message.metadata?.hasProductRecommendation && (
+              <button className="text-xs text-text-secondary hover:text-primary transition-colors font-medium ml-1">
+                View Product
+              </button>
+            )}
           </div>
         )}
       </div>

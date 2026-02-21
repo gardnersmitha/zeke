@@ -38,6 +38,11 @@ export interface Message {
   content: string;
   timestamp: Date;
   responseCards?: ResponseCard[];
+  metadata?: {
+    hasActionableTask?: boolean;
+    hasProRecommendation?: boolean;
+    hasProductRecommendation?: boolean;
+  };
 }
 
 export interface ResponseCard {
